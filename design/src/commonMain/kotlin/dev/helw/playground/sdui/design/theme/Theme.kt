@@ -2,10 +2,11 @@ package dev.helw.playground.sdui.design.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import dev.helw.playground.sdui.design.core.Typography
+import dev.helw.playground.sdui.design.core.TypographyToken
 
 
 private val LightColors = lightColorScheme(
@@ -73,19 +74,20 @@ private val DarkColors = darkColorScheme(
     scrim = md_theme_dark_scrim,
 )
 
-private val typography = androidx.compose.material3.Typography(
-    headlineLarge = Typography.Headline.Large.textStyle,
-    headlineMedium = Typography.Headline.Medium.textStyle,
-    headlineSmall = Typography.Headline.Small.textStyle,
-    titleLarge = Typography.Title.Large.textStyle,
-    titleMedium = Typography.Title.Medium.textStyle,
-    titleSmall = Typography.Title.Small.textStyle,
-    bodyLarge = Typography.Body.Large.textStyle,
-    bodyMedium = Typography.Body.Medium.textStyle,
-    bodySmall = Typography.Body.Small.textStyle,
-    labelLarge = Typography.Label.Large.textStyle,
-    labelMedium = Typography.Label.Medium.textStyle,
-    labelSmall = Typography.Label.Small.textStyle
+private val typography = Typography(
+    // for now, leave defaults for display{Large,Medium,Small}
+    headlineLarge = TypographyToken.Headline.Large.textStyle,
+    headlineMedium = TypographyToken.Headline.Medium.textStyle,
+    headlineSmall = TypographyToken.Headline.Small.textStyle,
+    titleLarge = TypographyToken.Title.Large.textStyle,
+    titleMedium = TypographyToken.Title.Medium.textStyle,
+    titleSmall = TypographyToken.Title.Small.textStyle,
+    bodyLarge = TypographyToken.Body.Large.textStyle,
+    bodyMedium = TypographyToken.Body.Medium.textStyle,
+    bodySmall = TypographyToken.Body.Small.textStyle,
+    labelLarge = TypographyToken.Label.Large.textStyle,
+    labelMedium = TypographyToken.Label.Medium.textStyle,
+    labelSmall = TypographyToken.Label.Small.textStyle
 )
 
 @Composable
