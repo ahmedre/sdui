@@ -1,4 +1,13 @@
 package dev.helw.playground.sdui.design.core
 
-interface ColorToken {
+import androidx.compose.ui.graphics.Color
+
+sealed interface ColorToken {
+    val color: Color
 }
+
+@JvmInline
+value class TextColor internal constructor(override val color: Color) : ColorToken
+
+@JvmInline
+value class BackgroundColor internal constructor(override val color: Color) : ColorToken
