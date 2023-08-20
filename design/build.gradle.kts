@@ -28,12 +28,6 @@ kotlin {
                 implementation(compose.uiTooling)
             }
         }
-
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-            }
-        }
     }
 }
 
