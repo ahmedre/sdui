@@ -2,6 +2,7 @@
 activity-compose = "1.7.2"
 agp = "8.2.0-alpha16"
 androidx-material = "1.5.0"
+coil-compose = "2.4.0"
 foundation = "1.5.0"
 kotlin = "1.8.21"
 core-ktx = "1.10.1"
@@ -19,6 +20,7 @@ androidx-compose-material = { module = "androidx.compose.material:material", ver
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }

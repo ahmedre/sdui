@@ -28,6 +28,12 @@ kotlin {
                 implementation(compose.uiTooling)
             }
         }
+
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.coil.compose)
+            }
+        }
     }
 }
 

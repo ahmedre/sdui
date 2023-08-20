@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import dev.helw.playground.sdui.design.component.AsyncImage
 import dev.helw.playground.sdui.design.component.Icon
 import dev.helw.playground.sdui.design.core.BackgroundColor
 import dev.helw.playground.sdui.design.core.IconToken
@@ -42,6 +43,10 @@ sealed interface ListItemScope {
                 )
             }
         }
+
+        @Composable
+        fun NetworkImage(url: String, contentDescription: String) =
+            AsyncImage(url, contentDescription)
     }
 
     interface Content : ListItemScope {
