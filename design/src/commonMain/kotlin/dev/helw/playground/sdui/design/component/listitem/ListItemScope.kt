@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import dev.helw.playground.sdui.design.component.Icon
 import dev.helw.playground.sdui.design.core.BackgroundColor
 import dev.helw.playground.sdui.design.core.IconToken
 import dev.helw.playground.sdui.design.core.SizeToken
@@ -16,14 +17,6 @@ import dev.helw.playground.sdui.design.core.TypographyToken
 
 sealed interface ListItemScope {
     data object Leading : ListItemScope {
-        @Composable
-        fun Icon(iconToken: IconToken, sizeToken: SizeToken = SizeToken.MEDIUM) {
-            androidx.compose.material3.Icon(
-                imageVector = iconToken.image,
-                contentDescription = "",
-                modifier = Modifier.size(sizeToken.underlyingSize)
-            )
-        }
 
         @Composable
         fun LetterCircle(
@@ -72,5 +65,9 @@ sealed interface ListItemScope {
         fun Detail(text: String) {
             Text(text = text, style = TypographyToken.Label.Detail.textStyle)
         }
+
+        @Composable
+        fun StatusIcon(iconToken: IconToken, sizeToken: SizeToken = SizeToken.MEDIUM) =
+            Icon(iconToken, sizeToken)
     }
 }
