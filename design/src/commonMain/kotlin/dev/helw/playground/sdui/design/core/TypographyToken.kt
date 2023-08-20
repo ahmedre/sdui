@@ -26,5 +26,6 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
         data object Large : Label("Label.Large", TextStyle())
         data object Medium : Label("Label.Medium", TextStyle())
         data object Small : Label("Label.Small", TextStyle())
+        data object Detail : Label("Label.Detail", TextStyle())
     }
 }

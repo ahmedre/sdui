@@ -53,12 +53,24 @@ sealed interface ListItemScope {
 
     interface Content : ListItemScope {
         data object Title : Content {
+            @Composable
+            fun Title(text: String) {
+                Text(text = text, style = TypographyToken.Title.Medium.textStyle)
+            }
         }
 
         data object Description : Content {
+            @Composable
+            fun Description(text: String) {
+                Text(text = text, style = TypographyToken.Label.Medium.textStyle)
+            }
         }
     }
 
     data object Trailing : ListItemScope {
+        @Composable
+        fun Detail(text: String) {
+            Text(text = text, style = TypographyToken.Label.Detail.textStyle)
+        }
     }
 }
