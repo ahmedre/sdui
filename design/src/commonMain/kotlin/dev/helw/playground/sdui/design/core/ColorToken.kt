@@ -10,4 +10,8 @@ sealed interface ColorToken {
 value class TextColor internal constructor(override val color: Color) : ColorToken
 
 @JvmInline
-value class BackgroundColor internal constructor(override val color: Color) : ColorToken
+value class BackgroundColor internal constructor(override val color: Color) : ColorToken {
+    companion object {
+        val Unspecified = BackgroundColor(Color.Unspecified)
+    }
+}
