@@ -1,10 +1,14 @@
 package dev.helw.playground.sdui.design.component.listitem
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.clip
 import dev.helw.playground.sdui.design.core.BackgroundColor
 import dev.helw.playground.sdui.design.core.IconToken
 import dev.helw.playground.sdui.design.core.SizeToken
@@ -32,17 +36,18 @@ sealed interface ListItemScope {
             val initials = pieces.take(2)
                 .mapNotNull { it.firstOrNull()?.uppercase() }
                 .joinToString("")
-            Text(
-                text = initials,
-                style = typography.textStyle,
+
+            Box(
+                contentAlignment = Alignment.Center,
                 modifier = Modifier.size(sizeToken.underlyingSize)
-                    .drawBehind {
-                        drawCircle(
-                            color = backgroundColor.color,
-                            radius = (sizeToken.underlyingSize / 2).value
-                        )
-                    }
-            )
+                    .clip(CircleShape)
+                    .background(backgroundColor.color)
+            ) {
+                Text(
+                    text = initials,
+                    style = typography.textStyle
+                )
+            }
         }
     }
 

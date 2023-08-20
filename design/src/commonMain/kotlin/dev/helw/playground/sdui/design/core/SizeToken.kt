@@ -4,7 +4,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 enum class SizeToken(val underlyingSize: Dp) {
-    SMALL(12.dp),
-    MEDIUM(16.dp),
-    LARGE(24.dp)
+    SMALL(24.dp),
+    MEDIUM(32.dp),
+    LARGE(48.dp)
 }
