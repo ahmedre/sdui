@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
+    kotlin("plugin.serialization")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -21,11 +22,11 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(project(":design"))
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(compose.uiTooling)
+                implementation(libs.kotlinx.serialization.json)
             }
         }
 
@@ -38,7 +39,7 @@ kotlin {
 }
 
 android {
-    namespace = "dev.helw.playground.sdui.design"
+    namespace = "dev.helw.playground.sdui"
     compileSdk = 34
     defaultConfig.minSdk = 21
 }

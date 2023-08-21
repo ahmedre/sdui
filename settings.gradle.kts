@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "sdui"
 include(":catalog")
 include(":design")
+include(":sdui")
