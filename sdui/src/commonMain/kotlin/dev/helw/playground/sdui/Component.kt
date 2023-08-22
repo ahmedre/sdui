@@ -5,5 +5,5 @@ import androidx.compose.runtime.Composable
 interface Component {
     val type: String
 
-    @Composable fun asComposable()
+    @Composable fun Content()
 }

@@ -28,4 +28,24 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
         data object Small : Label("Label.Small", TextStyle())
         data object Detail : Label("Label.Detail", TextStyle())
     }
+
+    companion object {
+        val values by lazy {
+            listOf(
+                Headline.Large,
+                Headline.Medium,
+                Headline.Small,
+                Title.Large,
+                Title.Medium,
+                Title.Small,
+                Body.Large,
+                Body.Medium,
+                Body.Small,
+                Label.Large,
+                Label.Medium,
+                Label.Small,
+                Label.Detail
+            )
+        }
+    }
 }
