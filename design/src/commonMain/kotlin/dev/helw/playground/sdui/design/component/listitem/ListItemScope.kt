@@ -26,11 +26,6 @@ sealed interface ListItemScope {
             typography: TypographyToken = TypographyToken.Label.Medium,
             backgroundColor: BackgroundColor = BackgroundColor.Unspecified
         ) {
-            val pieces = text.split(" ")
-            val initials = pieces.take(2)
-                .mapNotNull { it.firstOrNull()?.uppercase() }
-                .joinToString("")
-
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier.size(sizeToken.underlyingSize)
@@ -38,7 +33,7 @@ sealed interface ListItemScope {
                     .background(backgroundColor.color)
             ) {
                 Text(
-                    text = initials,
+                    text = text,
                     style = typography.textStyle
                 )
             }

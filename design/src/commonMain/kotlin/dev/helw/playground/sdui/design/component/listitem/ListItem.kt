@@ -2,7 +2,7 @@ package dev.helw.playground.sdui.design.component.listitem
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import dev.helw.playground.sdui.design.core.BackgroundColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -12,7 +12,7 @@ fun ListItem(
     leading: @Composable ListItemScope.Leading.() -> Unit = {},
     trailing: @Composable ListItemScope.Trailing.() -> Unit = {},
     onClick: () -> Unit = {},
-    backgroundColor: Color = Color.Unspecified
+    backgroundColor: BackgroundColor = BackgroundColor.Unspecified
 ) {
 
     androidx.compose.material3.ListItem(
