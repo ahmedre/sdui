@@ -1,4 +1,4 @@
-package dev.helw.playground.sdui.android
+package dev.helw.playground.sdui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

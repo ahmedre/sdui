@@ -1,4 +1,4 @@
-package dev.helw.playground.sdui.android
+package dev.helw.playground.sdui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

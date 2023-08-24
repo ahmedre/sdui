@@ -1,11 +1,59 @@
 plugins {
+    kotlin("multiplatform")
     id("com.android.application")
-    kotlin("android")
+    id("org.jetbrains.compose")
+}
+
+@OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
+kotlin {
+    targetHierarchy.default()
+
+    jvm("desktop")
+
+    androidTarget {
+        compilations.all {
+            kotlinOptions {
+                jvmTarget = "1.8"
+            }
+        }
+    }
+
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(compose.ui)
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material3)
+                implementation(compose.uiTooling)
+            }
+        }
+
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.coil.compose)
+                implementation(project(":design"))
+                implementation(libs.androidx.compose.ui)
+                implementation(libs.androidx.compose.ui.tooling)
+                implementation(libs.androidx.compose.ui.tooling.preview)
+                implementation(libs.androidx.compose.foundation)
+                implementation(libs.androidx.compose.material)
+                implementation(libs.androidx.activity.compose)
+            }
+        }
+    }
 }
 
 android {
     namespace = "dev.helw.playground.sdui.android"
     compileSdk = 34
+
+    sourceSets {
+        getByName("main") {
+            manifest.srcFile("src/androidMain/AndroidManifest.xml")
+            res.srcDir("src/commonRes")
+        }
+    }
 
     defaultConfig {
         applicationId = "dev.helw.playground.sdui.android"
@@ -34,18 +82,19 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
-dependencies {
-    implementation(project(":design"))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.foundation)
-    implementation(libs.androidx.compose.material)
-    implementation(libs.androidx.activity.compose)
+compose {
+    desktop.application {
+        mainClass = "com.careem.design.desktop.DemoAppKt"
+        nativeDistributions {
+            //targetFormats(TargetFormat.Dmg)
+            packageName = "DemoApp"
+            macOS {
+                bundleID = "com.careem.design.desktop"
+            }
+        }
+    }
+
+    experimental.web.application {}
 }
