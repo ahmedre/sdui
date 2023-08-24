@@ -39,6 +39,7 @@ kotlin {
                 implementation(libs.androidx.compose.foundation)
                 implementation(libs.androidx.compose.material)
                 implementation(libs.androidx.activity.compose)
+                implementation(libs.androidx.navigation.compose)
             }
         }
     }
