@@ -9,7 +9,7 @@ internal val NavigationGraph = listOf(
         title = "Native List",
         subtitle = "A list built natively",
         icon = IconToken.LIST,
-        content = { /* TODO */ }
+        content = { NativeListScene(it) }
     ),
     Destination(
         title = "Server Driven List",
