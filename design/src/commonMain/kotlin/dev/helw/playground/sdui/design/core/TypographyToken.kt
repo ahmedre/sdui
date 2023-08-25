@@ -16,15 +16,73 @@ private inline val DefaultPlatformTextStyle: PlatformTextStyle get() = platformT
 
 sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
     sealed class Headline(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {
-        data object Large : Headline("Headline.Large", TextStyle())
-        data object Medium : Headline("Headline.Medium", TextStyle())
-        data object Small : Headline("Headline.Small", TextStyle())
+        data object Large : Headline(
+            name = "Headline.Large",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 32.sp,
+                lineHeight = 40.0.sp,
+                letterSpacing = 0.sp,
+            )
+        )
+
+        data object Medium : Headline(
+            name = "Headline.Medium",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 28.sp,
+                lineHeight = 36.sp,
+                letterSpacing = 0.sp,
+            )
+        )
+
+        data object Small : Headline(
+            name = "Headline.Small",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 24.sp,
+                lineHeight = 32.sp,
+                letterSpacing = 0.sp,
+            )
+        )
     }
 
     sealed class Title(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {
-        data object Large : Title("Title.Large", TextStyle())
-        data object Medium : Title("Title.Medium", TextStyle())
-        data object Small : Title("Title.Small", TextStyle())
+        data object Large : Title(
+            name = "Title.Large",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 22.sp,
+                lineHeight = 28.sp,
+                letterSpacing = 0.sp,
+            )
+        )
+
+        data object Medium : Title(
+            name = "Title.Medium",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 16.sp,
+                lineHeight = 24.sp,
+                letterSpacing = .2.sp,
+            )
+        )
+
+        data object Small : Title(
+            name = "Title.Small",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 14.sp,
+                lineHeight = 20.sp,
+                letterSpacing = .1.sp,
+            )
+        )
     }
 
     sealed class Body(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {
@@ -66,9 +124,39 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
     }
 
     sealed class Label(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {
-        data object Large : Label("Label.Large", TextStyle())
-        data object Medium : Label("Label.Medium", TextStyle())
-        data object Small : Label("Label.Small", TextStyle())
+        data object Large : Label(
+            name = "Label.Large",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Medium,
+                fontSize = 14.sp,
+                lineHeight = 20.sp,
+                letterSpacing = .1.sp,
+            )
+        )
+
+        data object Medium : Label(
+            name = "Label.Medium",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Medium,
+                fontSize = 12.sp,
+                lineHeight = 16.sp,
+                letterSpacing = .5.sp,
+            )
+        )
+
+        data object Small : Label(
+            name = "Label.Small",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Medium,
+                fontSize = 11.sp,
+                lineHeight = 16.sp,
+                letterSpacing = .5.sp,
+            )
+        )
+
         data object Detail : Label("Label.Detail", TextStyle())
     }
 

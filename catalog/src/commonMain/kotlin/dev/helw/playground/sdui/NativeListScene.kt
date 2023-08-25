@@ -9,7 +9,7 @@ import dev.helw.playground.sdui.design.core.IconToken
 import dev.helw.playground.sdui.design.core.color.LocalBackgroundColors
 
 @Composable
-fun NativeListScene(modifier: Modifier = Modifier) {
+internal fun NativeListScene(modifier: Modifier = Modifier) {
     val state = rememberLazyListState()
     LazyColumn(
         state = state,
