@@ -24,6 +24,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 32.sp,
                 lineHeight = 40.0.sp,
                 letterSpacing = 0.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
@@ -35,6 +36,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 28.sp,
                 lineHeight = 36.sp,
                 letterSpacing = 0.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
@@ -46,6 +48,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 24.sp,
                 lineHeight = 32.sp,
                 letterSpacing = 0.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
     }
@@ -59,6 +62,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 22.sp,
                 lineHeight = 28.sp,
                 letterSpacing = 0.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
@@ -70,6 +74,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 16.sp,
                 lineHeight = 24.sp,
                 letterSpacing = .2.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
@@ -81,6 +86,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 letterSpacing = .1.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
     }
@@ -132,6 +138,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 letterSpacing = .1.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
@@ -143,6 +150,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 12.sp,
                 lineHeight = 16.sp,
                 letterSpacing = .5.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
@@ -154,6 +162,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 fontSize = 11.sp,
                 lineHeight = 16.sp,
                 letterSpacing = .5.sp,
+                platformStyle = DefaultPlatformTextStyle,
             )
         )
 
