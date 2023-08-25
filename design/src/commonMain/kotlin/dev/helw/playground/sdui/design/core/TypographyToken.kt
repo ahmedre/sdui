@@ -1,7 +1,18 @@
 package dev.helw.playground.sdui.design.core
 
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
+internal expect val fontFamily: FontFamily
+
+internal expect val platformTextStyle: PlatformTextStyle
+
+private inline val DefaultFontFamily: FontFamily get() = fontFamily
+
+private inline val DefaultPlatformTextStyle: PlatformTextStyle get() = platformTextStyle
 
 sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
     sealed class Headline(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {
@@ -17,9 +28,41 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
     }
 
     sealed class Body(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {
-        data object Large : Body("Body.Large", TextStyle())
-        data object Medium : Body("Body.Medium", TextStyle())
-        data object Small : Body("Body.Small", TextStyle())
+        data object Large : Body(
+            name = "Body.Large",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 18.sp,
+                lineHeight = 24.sp,
+                letterSpacing = (-0.25).sp,
+                platformStyle = DefaultPlatformTextStyle,
+            )
+        )
+
+        data object Medium : Body(
+            name = "Body.Medium",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 16.sp,
+                lineHeight = 24.sp,
+                letterSpacing = (-0.25).sp,
+                platformStyle = DefaultPlatformTextStyle,
+            )
+        )
+
+        data object Small : Body(
+            name = "Body.Small",
+            textStyle = TextStyle(
+                fontFamily = DefaultFontFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 14.sp,
+                lineHeight = 20.sp,
+                letterSpacing = (-0.25).sp,
+                platformStyle = DefaultPlatformTextStyle,
+            ),
+        )
     }
 
     sealed class Label(name: String, textStyle: TextStyle) : TypographyToken(name, textStyle) {

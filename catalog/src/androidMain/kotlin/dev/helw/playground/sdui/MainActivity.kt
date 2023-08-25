@@ -126,12 +126,12 @@ private fun MainDemo(
                 Column(modifier = Modifier.weight(1f).padding(horizontal = 16.dp)) {
                     Label(
                         text = destination.title,
-                        typographyToken = TypographyToken.Title.Medium,
+                        typographyToken = TypographyToken.Body.Large,
                         textColor = LocalTextColors.current.primary,
                     )
                     Label(
                         text = destination.subtitle,
-                        typographyToken = TypographyToken.Body.Medium,
+                        typographyToken = TypographyToken.Body.Small,
                         textColor = LocalTextColors.current.secondary,
                         overflow = TextOverflow.Ellipsis,
                         maxLines = 2,

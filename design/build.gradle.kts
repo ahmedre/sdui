@@ -34,6 +34,10 @@ kotlin {
                 implementation(libs.coil.compose)
             }
         }
+
+        val desktopMain by getting {
+            resources.srcDir("src/commonRes")
+        }
     }
 }
 
@@ -41,4 +45,9 @@ android {
     namespace = "dev.helw.playground.sdui.design"
     compileSdk = 34
     defaultConfig.minSdk = 21
+    sourceSets {
+        named("main") {
+            res.srcDir("src/commonRes")
+        }
+    }
 }
