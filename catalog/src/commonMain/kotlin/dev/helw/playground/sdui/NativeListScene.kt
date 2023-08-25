@@ -20,16 +20,16 @@ internal fun NativeListScene(modifier: Modifier = Modifier) {
                 title = { Title("Title $it") },
                 description = { Description("Description $it") },
                 leading = {
-                    if (it % 2 == 0) {
-                        LetterCircle(
+                    when (it % 3) {
+                        0 -> LetterCircle(
                             text = "$it",
                             backgroundColor = LocalBackgroundColors.current.primary
                         )
-                    } else {
-                        NetworkImage(
+                        1 -> NetworkImage(
                             url = "https://images.freeimages.com/images/large-previews/8d1/summer-joy-1629829.jpg",
                             contentDescription = "Random Network Image $it"
                         )
+                        else -> StatusIcon(iconToken = IconToken.FAVORITE)
                     }
                 },
                 trailing = {
