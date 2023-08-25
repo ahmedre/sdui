@@ -1,7 +1,7 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.android.application")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrain.compose)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -21,6 +21,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(project(":design"))
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -31,8 +32,8 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                implementation(libs.coil.compose)
                 implementation(project(":design"))
+                implementation(libs.coil.compose)
                 implementation(libs.androidx.compose.ui)
                 implementation(libs.androidx.compose.ui.tooling)
                 implementation(libs.androidx.compose.ui.tooling.preview)
