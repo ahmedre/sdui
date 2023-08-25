@@ -18,7 +18,7 @@ class SizeTokenSerializer : KSerializer<SizeToken> {
 
     override fun deserialize(decoder: Decoder): SizeToken {
         val tokenString = decoder.decodeString().lowercase()
-        return SizeToken.values()
+        return SizeToken.entries
             .find { it.name.lowercase() == tokenString } ?: SizeToken.MEDIUM
     }
 }

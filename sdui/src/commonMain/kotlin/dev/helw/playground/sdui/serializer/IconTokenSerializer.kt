@@ -18,7 +18,7 @@ class IconTokenSerializer : KSerializer<IconToken> {
 
     override fun deserialize(decoder: Decoder): IconToken {
         val tokenString = decoder.decodeString().lowercase()
-        return IconToken.values()
+        return IconToken.entries
             .find { it.name.lowercase() == tokenString } ?: IconToken.FAVORITE
     }
 }
