@@ -1,27 +1,36 @@
 package dev.helw.playground.sdui
 
+import dev.helw.playground.sdui.action.Action
 import dev.helw.playground.sdui.component.AsyncImageComponent
 import dev.helw.playground.sdui.component.IconComponent
 import dev.helw.playground.sdui.component.LabelComponent
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.modules.PolymorphicModuleBuilder
 import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.modules.SerializersModuleBuilder
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
 
 object Parser {
     private val componentModule = SerializersModule {
-        fun PolymorphicModuleBuilder<Component>.registerProjectSubclasses() {
-            subclass(LabelComponent::class)
-            subclass(IconComponent::class)
-            subclass(AsyncImageComponent::class)
+        fun SerializersModuleBuilder.registerComponents() {
+            polymorphic(Component::class) {
+                subclass(LabelComponent::class)
+                subclass(IconComponent::class)
+                subclass(AsyncImageComponent::class)
+            }
         }
 
-        polymorphic(Component::class) { registerProjectSubclasses() }
+        fun SerializersModuleBuilder.registerActions() {
+            polymorphic(Action::class) {
+                subclass(Action.OnClick.Deeplink::class)
+                subclass(Action.OnViewed.ImpressionEvent::class)
+            }
+        }
+        registerComponents()
+        registerActions()
     }
 
     private val json = Json {
-        classDiscriminator = "type"
         serializersModule = componentModule
     }
 

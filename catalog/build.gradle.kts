@@ -22,6 +22,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(projects.design)
+                implementation(projects.sdui)
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
