@@ -21,7 +21,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":design"))
+                implementation(projects.design)
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -32,7 +32,7 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                implementation(project(":design"))
+                implementation(projects.design)
                 implementation(libs.coil.compose)
                 implementation(libs.androidx.compose.ui)
                 implementation(libs.androidx.compose.ui.tooling)

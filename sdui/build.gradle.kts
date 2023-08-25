@@ -22,7 +22,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":design"))
+                implementation(projects.design)
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)

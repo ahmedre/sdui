@@ -1,3 +1,7 @@
+@file:Suppress("UnstableApiUsage")
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         google()
@@ -13,7 +17,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "sdui"
+rootProject.name = "server-driven-ui"
 include(":catalog")
-include(":design")
 include(":sdui")
+include(":design")

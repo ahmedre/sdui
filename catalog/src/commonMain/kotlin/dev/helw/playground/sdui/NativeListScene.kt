@@ -25,10 +25,12 @@ internal fun NativeListScene(modifier: Modifier = Modifier) {
                             text = "$it",
                             backgroundColor = LocalBackgroundColors.current.primary
                         )
+
                         1 -> NetworkImage(
                             url = "https://images.freeimages.com/images/large-previews/8d1/summer-joy-1629829.jpg",
                             contentDescription = "Random Network Image $it"
                         )
+
                         else -> StatusIcon(iconToken = IconToken.FAVORITE)
                     }
                 },
