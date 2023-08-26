@@ -11,7 +11,6 @@ import kotlinx.serialization.Serializable
 @SerialName("list")
 class ListComponent(
     private val contents: List<Component>,
-    override val type: String,
     override val identifier: String
 ) : Component {
 

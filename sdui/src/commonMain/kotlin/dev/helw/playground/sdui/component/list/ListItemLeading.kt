@@ -22,11 +22,11 @@ sealed class ListItemLeading {
         private val size: SizeToken,
         @Serializable(with = TypographyTokenSerializer::class)
         private val typography: TypographyToken,
-        private val backgroundColorToken: BackgroundColorToken
+        private val backgroundColor: BackgroundColorToken
     ) : ListItemLeading() {
 
         override fun asListItemScope(): @Composable ListItemScope.Leading.() -> Unit =
-            { LetterCircle(text, size, typography, backgroundColorToken.colorValue()) }
+            { LetterCircle(text, size, typography, backgroundColor.colorValue()) }
     }
 
     @SerialName("networkImage")

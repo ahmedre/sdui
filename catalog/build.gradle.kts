@@ -22,6 +22,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(projects.design)
+                implementation(projects.sdui)
+
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -32,7 +34,6 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                implementation(projects.design)
                 implementation(libs.coil.compose)
                 implementation(libs.androidx.compose.ui)
                 implementation(libs.androidx.compose.ui.tooling)
