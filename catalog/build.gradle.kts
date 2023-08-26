@@ -23,7 +23,6 @@ kotlin {
             dependencies {
                 implementation(projects.design)
                 implementation(projects.sdui)
-
                 implementation(compose.ui)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
@@ -44,6 +43,17 @@ kotlin {
                 implementation(libs.androidx.navigation.compose)
             }
         }
+
+        val desktopMain by getting {
+            resources.srcDir("src/commonRes")
+            dependencies {
+                implementation(compose.ui)
+                implementation(compose.material)
+                implementation(compose.uiTooling)
+                implementation(compose.desktop.currentOs)
+            }
+        }
+
     }
 }
 
@@ -89,13 +99,10 @@ android {
 
 compose {
     desktop.application {
-        mainClass = "com.careem.design.desktop.DemoAppKt"
+        mainClass = "dev.helw.playground.sdui.DesktopDemoAppKt"
         nativeDistributions {
-            //targetFormats(TargetFormat.Dmg)
-            packageName = "DemoApp"
-            macOS {
-                bundleID = "com.careem.design.desktop"
-            }
+            packageName = "DesktopDemoApp"
+            macOS.bundleID = "dev.helw.playground.sdui"
         }
     }
 

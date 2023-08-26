@@ -15,6 +15,7 @@ material = "1.9.0"
 compose = "1.5.0"
 lifecycle-runtime-ktx = "2.6.1"
 compose-bom = "2023.08.00"
+compose-compiler = "1.5.1"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -24,6 +25,7 @@ androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compos
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+androidx-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compose-compiler" }
 
 androidx-navigation-compose = "androidx.navigation:navigation-compose:2.7.1"
 
