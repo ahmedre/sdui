@@ -15,7 +15,7 @@ internal val NavigationGraph = listOf(
         title = "Server Driven List",
         subtitle = "A list rendered via json response",
         icon = IconToken.SETTINGS,
-        content = { /* TODO */ }
+        content = { ServerDrivenUiScene(it) }
     ),
 )
 

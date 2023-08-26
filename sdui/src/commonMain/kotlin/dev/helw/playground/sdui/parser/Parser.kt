@@ -1,9 +1,11 @@
-package dev.helw.playground.sdui
+package dev.helw.playground.sdui.parser
 
 import dev.helw.playground.sdui.action.Action
 import dev.helw.playground.sdui.component.AsyncImageComponent
 import dev.helw.playground.sdui.component.IconComponent
 import dev.helw.playground.sdui.component.LabelComponent
+import dev.helw.playground.sdui.component.ListComponent
+import dev.helw.playground.sdui.model.Component
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.SerializersModuleBuilder
@@ -14,6 +16,7 @@ object Parser {
     private val componentModule = SerializersModule {
         fun SerializersModuleBuilder.registerComponents() {
             polymorphic(Component::class) {
+                subclass(ListComponent::class)
                 subclass(LabelComponent::class)
                 subclass(IconComponent::class)
                 subclass(AsyncImageComponent::class)

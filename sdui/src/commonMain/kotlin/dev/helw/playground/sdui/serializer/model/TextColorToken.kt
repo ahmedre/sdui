@@ -1,4 +1,4 @@
-package dev.helw.playground.sdui.model
+package dev.helw.playground.sdui.serializer.model
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable

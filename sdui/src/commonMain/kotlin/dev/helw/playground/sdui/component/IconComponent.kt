@@ -1,7 +1,8 @@
 package dev.helw.playground.sdui.component
 
 import androidx.compose.runtime.Composable
-import dev.helw.playground.sdui.Component
+import androidx.compose.ui.Modifier
+import dev.helw.playground.sdui.model.Component
 import dev.helw.playground.sdui.design.component.Icon
 import dev.helw.playground.sdui.design.core.IconToken
 import dev.helw.playground.sdui.design.core.SizeToken
@@ -17,11 +18,12 @@ class IconComponent(
     private val icon: IconToken,
     @Serializable(with = SizeTokenSerializer::class)
     private val size: SizeToken,
-    override val type: String
+    override val type: String,
+    override val identifier: String
 ) : Component {
 
     @Composable
-    override fun Content() {
+    override fun Content(modifier: Modifier) {
         Icon(icon, size)
     }
 }

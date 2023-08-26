@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import dev.helw.playground.sdui.design.component.listitem.ListItemScope
 import dev.helw.playground.sdui.design.core.SizeToken
 import dev.helw.playground.sdui.design.core.TypographyToken
-import dev.helw.playground.sdui.model.BackgroundColorToken
+import dev.helw.playground.sdui.serializer.model.BackgroundColorToken
 import dev.helw.playground.sdui.serializer.SizeTokenSerializer
 import dev.helw.playground.sdui.serializer.TypographyTokenSerializer
 import kotlinx.serialization.SerialName
