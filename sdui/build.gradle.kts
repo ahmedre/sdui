@@ -5,11 +5,17 @@ plugins {
     alias(libs.plugins.jetbrain.compose)
 }
 
+compose {
+    kotlinCompilerPlugin = libs.androidx.compose.compiler.map { it.toString() }
+}
+
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
     targetHierarchy.default()
 
     jvm("desktop")
+
+    js(IR) { browser() }
 
     androidTarget {
         compilations.all {

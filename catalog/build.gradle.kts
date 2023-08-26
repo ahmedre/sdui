@@ -10,6 +10,12 @@ kotlin {
 
     jvm("desktop")
 
+    js(IR) {
+        moduleName = "catalog"
+        browser()
+        binaries.executable()
+    }
+
     androidTarget {
         compilations.all {
             kotlinOptions {
@@ -27,7 +33,6 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
-                implementation(compose.uiTooling)
             }
         }
 
@@ -54,6 +59,15 @@ kotlin {
             }
         }
 
+        val jsMain by getting {
+            resources.srcDirs("src/commonRes", "../sdui/src/commonRes")
+            dependencies {
+                implementation(projects.design)
+                implementation(compose.ui)
+                implementation(compose.material)
+                implementation(compose.foundation)
+            }
+        }
     }
 }
 
