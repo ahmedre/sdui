@@ -19,8 +19,8 @@ fun ListItem(
     modifier: Modifier = Modifier
 ) {
     androidx.compose.material3.ListItem(
-        headlineText = { ListItemScope.Content.Title.title() },
-        supportingText = { ListItemScope.Content.Description.description() },
+        headlineContent = { ListItemScope.Content.Title.title() },
+        supportingContent = { ListItemScope.Content.Description.description() },
         leadingContent = { ListItemScope.Leading.leading() },
         trailingContent = { ListItemScope.Trailing.trailing() },
         modifier = modifier.clickable { onClick() }.background(color = backgroundColor.color)

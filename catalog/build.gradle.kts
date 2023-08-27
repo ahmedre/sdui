@@ -4,6 +4,11 @@ plugins {
     alias(libs.plugins.jetbrain.compose)
 }
 
+compose {
+    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.0")
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.10")
+}
+
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
     targetHierarchy.default()
@@ -91,7 +96,7 @@ android {
     }
 
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = "1.5.0"
+    composeOptions.kotlinCompilerExtensionVersion = "1.5.2"
 
     packaging {
         resources {
