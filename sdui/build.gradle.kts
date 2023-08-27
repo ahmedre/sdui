@@ -37,9 +37,28 @@ kotlin {
             }
         }
 
+        val composeMain by creating {
+            dependencies {
+                dependsOn(commonMain)
+            }
+        }
+
         val androidMain by getting {
             dependencies {
+                dependsOn(composeMain)
                 implementation(libs.coil.compose)
+            }
+        }
+
+        val desktopMain by getting {
+            dependencies {
+                dependsOn(composeMain)
+            }
+        }
+
+        val jsMain by getting {
+            dependencies {
+                dependsOn(composeMain)
             }
         }
     }

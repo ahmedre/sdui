@@ -1,9 +1,7 @@
 package dev.helw.playground.sdui.component
 
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import dev.helw.playground.sdui.model.Component
+import dev.helw.playground.sdui.model.Renderer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -14,14 +12,7 @@ class ListComponent(
     override val identifier: String
 ) : Component {
 
-    @Composable
-    override fun Content(modifier: Modifier) {
-        LazyColumn(modifier = modifier) {
-            contents.forEach {
-                item(key = it.identifier) {
-                    it.Content(modifier)
-                }
-            }
-        }
+    override fun provideRenderer(): Renderer {
+        return provideRendererProvider().provideListRenderer(contents)
     }
 }

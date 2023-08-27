@@ -1,14 +1,11 @@
 package dev.helw.playground.sdui.component
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import dev.helw.playground.sdui.component.list.ListItemContentDescription
 import dev.helw.playground.sdui.component.list.ListItemContentTitle
 import dev.helw.playground.sdui.component.list.ListItemLeading
 import dev.helw.playground.sdui.component.list.ListItemTrailing
-import dev.helw.playground.sdui.design.component.listitem.ListItem
-import dev.helw.playground.sdui.design.core.BackgroundColor
 import dev.helw.playground.sdui.model.Component
+import dev.helw.playground.sdui.model.Renderer
 import dev.helw.playground.sdui.serializer.model.BackgroundColorToken
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -24,14 +21,12 @@ class ListItemComponent(
     override val identifier: String
 ) : Component {
 
-    @Composable
-    override fun Content(modifier: Modifier) {
-        ListItem(
-            title = title.asListItemScope(),
-            description = description?.asListItemScope() ?: {},
-            leading = leading?.asListItemScope() ?: {},
-            trailing = trailing?.asListItemScope() ?: {},
-            backgroundColor = backgroundColor?.colorValue() ?: BackgroundColor.Unspecified
-        )
+    override fun provideRenderer(): Renderer {
+        return provideRendererProvider().provideListItemRenderer(
+            title = title,
+            description = description,
+            leading = leading,
+            trailing = trailing,
+            backgroundColor = backgroundColor)
     }
 }

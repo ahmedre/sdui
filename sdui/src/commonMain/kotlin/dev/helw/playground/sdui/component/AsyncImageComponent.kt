@@ -1,9 +1,7 @@
 package dev.helw.playground.sdui.component
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import dev.helw.playground.sdui.design.component.AsyncImage
 import dev.helw.playground.sdui.model.Component
+import dev.helw.playground.sdui.model.Renderer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -15,8 +13,6 @@ class AsyncImageComponent(
     override val identifier: String
 ) : Component {
 
-    @Composable
-    override fun Content(modifier: Modifier) {
-        AsyncImage(url, contentDescription)
-    }
+    override fun provideRenderer(): Renderer =
+        provideRendererProvider().provideAsyncImageRenderer(url, contentDescription)
 }

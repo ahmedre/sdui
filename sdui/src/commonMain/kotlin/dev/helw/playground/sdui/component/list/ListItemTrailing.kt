@@ -1,7 +1,5 @@
 package dev.helw.playground.sdui.component.list
 
-import androidx.compose.runtime.Composable
-import dev.helw.playground.sdui.design.component.listitem.ListItemScope
 import dev.helw.playground.sdui.design.core.IconToken
 import dev.helw.playground.sdui.design.core.SizeToken
 import dev.helw.playground.sdui.serializer.IconTokenSerializer
@@ -11,15 +9,16 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 sealed class ListItemTrailing {
-    abstract fun asListItemScope(): @Composable ListItemScope.Trailing.() -> Unit
+    abstract fun renderer(): ListItemTrailingRenderer
 
     @SerialName("detail")
     @Serializable
     data class DetailTrailing(
         val text: String
     ) : ListItemTrailing() {
-        override fun asListItemScope(): @Composable ListItemScope.Trailing.() -> Unit =
-            { Detail(text) }
+        override fun renderer(): ListItemTrailingRenderer =
+            provideListItemRendererProvider().provideListItemTrailingRendererProvider()
+                .provideListItemTrailingDetailRenderer(text)
     }
 
     @SerialName("statusIcon")
@@ -30,7 +29,9 @@ sealed class ListItemTrailing {
         @Serializable(with = SizeTokenSerializer::class)
         private val size: SizeToken,
     ) : ListItemTrailing() {
-        override fun asListItemScope(): @Composable ListItemScope.Trailing.() -> Unit =
-            { StatusIcon(icon, size) }
+
+        override fun renderer(): ListItemTrailingRenderer =
+            provideListItemRendererProvider().provideListItemTrailingRendererProvider()
+                .provideListItemTrailingStatusIconRenderer(icon, size)
     }
 }

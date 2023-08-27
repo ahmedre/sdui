@@ -1,10 +1,8 @@
 package dev.helw.playground.sdui.component
 
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import dev.helw.playground.sdui.design.component.Label
 import dev.helw.playground.sdui.design.core.TypographyToken
 import dev.helw.playground.sdui.model.Component
+import dev.helw.playground.sdui.model.Renderer
 import dev.helw.playground.sdui.serializer.TypographyTokenSerializer
 import dev.helw.playground.sdui.serializer.model.TextColorToken
 import kotlinx.serialization.SerialName
@@ -20,12 +18,7 @@ class LabelComponent(
     override val identifier: String
 ) : Component {
 
-    @Composable
-    override fun Content(modifier: Modifier) {
-        Label(
-            text = text,
-            typographyToken = typography,
-            textColor = color.colorValue()
-        )
+    override fun provideRenderer(): Renderer {
+        return provideRendererProvider().provideLabelRenderer(text, typography, color)
     }
 }

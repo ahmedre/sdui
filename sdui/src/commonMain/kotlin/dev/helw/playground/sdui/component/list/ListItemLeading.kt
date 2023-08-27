@@ -1,18 +1,16 @@
 package dev.helw.playground.sdui.component.list
 
-import androidx.compose.runtime.Composable
-import dev.helw.playground.sdui.design.component.listitem.ListItemScope
 import dev.helw.playground.sdui.design.core.SizeToken
 import dev.helw.playground.sdui.design.core.TypographyToken
-import dev.helw.playground.sdui.serializer.model.BackgroundColorToken
 import dev.helw.playground.sdui.serializer.SizeTokenSerializer
 import dev.helw.playground.sdui.serializer.TypographyTokenSerializer
+import dev.helw.playground.sdui.serializer.model.BackgroundColorToken
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 sealed class ListItemLeading {
-    abstract fun asListItemScope(): @Composable ListItemScope.Leading.() -> Unit
+    abstract fun renderer(): ListItemLeadingRenderer
 
     @SerialName("letterCircle")
     @Serializable
@@ -24,9 +22,15 @@ sealed class ListItemLeading {
         private val typography: TypographyToken,
         private val backgroundColor: BackgroundColorToken
     ) : ListItemLeading() {
-
-        override fun asListItemScope(): @Composable ListItemScope.Leading.() -> Unit =
-            { LetterCircle(text, size, typography, backgroundColor.colorValue()) }
+        override fun renderer(): ListItemLeadingRenderer {
+            return provideListItemRendererProvider().provideListItemLeadingRendererProvider()
+                .provideListItemLetterCircleRenderer(
+                    text,
+                    size,
+                    typography,
+                    backgroundColor
+                )
+        }
     }
 
     @SerialName("networkImage")
@@ -35,8 +39,9 @@ sealed class ListItemLeading {
         val url: String,
         val contentDescription: String
     ) : ListItemLeading() {
-
-        override fun asListItemScope(): @Composable ListItemScope.Leading.() -> Unit =
-            { NetworkImage(url, contentDescription) }
+        override fun renderer(): ListItemLeadingRenderer {
+            return provideListItemRendererProvider().provideListItemLeadingRendererProvider()
+                .provideListItemNetworkImageRenderer(url, contentDescription)
+        }
     }
 }
