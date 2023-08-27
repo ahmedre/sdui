@@ -5,7 +5,8 @@ plugins {
 }
 
 compose {
-    kotlinCompilerPlugin = libs.androidx.compose.compiler.map { it.toString() }
+    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.0")
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.10")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -47,11 +48,10 @@ kotlin {
 
         val jsMain by getting {
             dependencies {
-                implementation(compose.ui)
-                implementation(compose.material)
-                implementation(compose.foundation)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.js)
             }
         }
     }

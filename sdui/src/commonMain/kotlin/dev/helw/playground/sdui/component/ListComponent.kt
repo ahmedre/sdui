@@ -16,7 +16,7 @@ class ListComponent(
 
     @Composable
     override fun Content(modifier: Modifier) {
-        LazyColumn {
+        LazyColumn(modifier = modifier) {
             contents.forEach {
                 item(key = it.identifier) {
                     it.Content(modifier)
