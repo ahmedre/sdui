@@ -17,6 +17,18 @@ internal val NavigationGraph = listOf(
         icon = IconToken.SETTINGS,
         content = { ServerDrivenUiScene(it) }
     ),
+    Destination(
+        title = "Typography",
+        subtitle = "Examples of currently supported typographies",
+        icon = IconToken.INFO,
+        content = { TypographyScene(it) }
+    ),
+    Destination(
+        title = "Icons",
+        subtitle = "Examples of currently supported Icons",
+        icon = IconToken.PLACE,
+        content = { IconScene(it) }
+    ),
 )
 
 data class Destination(
