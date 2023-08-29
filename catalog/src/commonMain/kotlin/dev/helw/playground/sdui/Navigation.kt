@@ -29,6 +29,12 @@ internal val NavigationGraph = listOf(
         icon = IconToken.PLACE,
         content = { IconScene(it) }
     ),
+    Destination(
+        title = "Sizes",
+        subtitle = "Examples of currently supported Sizes",
+        icon = IconToken.ADD,
+        content = { SizeScene(it) }
+    ),
 )
 
 data class Destination(
