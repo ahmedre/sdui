@@ -27,5 +27,4 @@ enum class IconToken(val image: ImageVector) {
     ARROW_BACK(Icons.Default.ArrowBack),
     PLACE(Icons.Default.Place),
     INFO(Icons.Default.Info),
-    EXCLAMATION(Icons.Default.Notifications),
 }
