@@ -6,18 +6,6 @@ import dev.helw.playground.sdui.design.core.IconToken
 
 internal val NavigationGraph = listOf(
     Destination(
-        title = "Native List",
-        subtitle = "A list built natively",
-        icon = IconToken.LIST,
-        content = { NativeListScene(it) }
-    ),
-    Destination(
-        title = "Server Driven List",
-        subtitle = "A list rendered via json response",
-        icon = IconToken.SETTINGS,
-        content = { ServerDrivenUiScene(it) }
-    ),
-    Destination(
         title = "Typography",
         subtitle = "Examples of currently supported typographies",
         icon = IconToken.INFO,
@@ -34,6 +22,24 @@ internal val NavigationGraph = listOf(
         subtitle = "Examples of currently supported Sizes",
         icon = IconToken.ADD,
         content = { SizeScene(it) }
+    ),
+    Destination(
+        title = "Colors",
+        subtitle = "Colors schemes currently supported",
+        icon = IconToken.FAVORITE,
+        content = { ColorScene(it) }
+    ),
+    Destination(
+        title = "Native List",
+        subtitle = "A list built natively",
+        icon = IconToken.LIST,
+        content = { NativeListScene(it) }
+    ),
+    Destination(
+        title = "Server Driven List",
+        subtitle = "A list rendered via json response",
+        icon = IconToken.SETTINGS,
+        content = { ServerDrivenUiScene(it) }
     ),
 )
 

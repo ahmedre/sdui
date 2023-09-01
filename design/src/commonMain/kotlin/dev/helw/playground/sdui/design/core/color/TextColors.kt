@@ -37,3 +37,10 @@ internal fun darkTextColors(): TextColors = TextColors(
     tertiary = TextColor(md_theme_dark_tertiary),
     primaryInverse = TextColor(md_theme_dark_inversePrimary)
 )
+
+fun TextColors.withNames() = buildList {
+    add(Pair("primary", primary))
+    add(Pair("secondary", secondary))
+    add(Pair("tertiary", tertiary))
+    add(Pair("primaryInverse", primaryInverse))
+}
