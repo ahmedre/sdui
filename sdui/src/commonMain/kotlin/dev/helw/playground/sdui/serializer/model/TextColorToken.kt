@@ -11,11 +11,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 enum class TextColorToken(private val textColor: TextColors.() -> TextColor) {
     @SerialName("primary") PRIMARY(TextColors::primary),
-    @SerialName("secondary") SECONDARY(TextColors::secondary);
+    @SerialName("secondary") SECONDARY(TextColors::secondary),
+    @SerialName("tertiary") TERTIARY(TextColors::tertiary),
+    @SerialName("primary_inverse") PRIMARY_INVERSE(TextColors::primaryInverse);
 
     @Composable
     @ReadOnlyComposable
-    fun colorValue(): TextColor {
-        return LocalTextColors.current.textColor()
-    }
+    fun colorValue(): TextColor = LocalTextColors.current.textColor()
 }
