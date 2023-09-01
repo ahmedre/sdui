@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -26,4 +27,5 @@ enum class IconToken(val image: ImageVector) {
     ARROW_BACK(Icons.Default.ArrowBack),
     PLACE(Icons.Default.Place),
     INFO(Icons.Default.Info),
+    EXCLAMATION(Icons.Default.Notifications),
 }
