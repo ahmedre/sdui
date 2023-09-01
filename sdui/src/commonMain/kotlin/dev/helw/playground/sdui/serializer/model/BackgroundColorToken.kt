@@ -11,11 +11,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 enum class BackgroundColorToken(private val backgroundColor: BackgroundColors.() -> BackgroundColor) {
     @SerialName("primary") PRIMARY(BackgroundColors::primary),
-    @SerialName("secondary") SECONDARY(BackgroundColors::secondary);
+    @SerialName("secondary") SECONDARY(BackgroundColors::secondary),
+    @SerialName("tertiary") TERTIARY(BackgroundColors::tertiary),
+    @SerialName("error") ERROR(BackgroundColors::error);
 
     @Composable
     @ReadOnlyComposable
-    fun colorValue(): BackgroundColor {
-        return LocalBackgroundColors.current.backgroundColor()
-    }
+    fun colorValue(): BackgroundColor = LocalBackgroundColors.current.backgroundColor()
 }
