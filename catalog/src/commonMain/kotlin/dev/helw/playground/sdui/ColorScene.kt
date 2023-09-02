@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.Alignment
@@ -30,7 +29,6 @@ import dev.helw.playground.sdui.design.core.color.withNames
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun ColorScene(modifier: Modifier = Modifier) {
-    val shape = Shapes().small
     val textColors = LocalTextColors.current.withNames()
     val backgroundColors = LocalBackgroundColors.current.withNames()
     LazyColumn(modifier = modifier) {

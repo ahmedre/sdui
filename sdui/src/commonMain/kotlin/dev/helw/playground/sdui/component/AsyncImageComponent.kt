@@ -17,6 +17,6 @@ class AsyncImageComponent(
 
     @Composable
     override fun Content(modifier: Modifier) {
-        AsyncImage(url, contentDescription)
+        AsyncImage(url, contentDescription, modifier)
     }
 }
