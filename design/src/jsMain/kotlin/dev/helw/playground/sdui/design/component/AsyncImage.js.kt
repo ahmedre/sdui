@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.toComposeImageBitmap
 import io.ktor.client.HttpClient
@@ -17,7 +18,7 @@ import org.jetbrains.skia.Image
 private val httpClient = HttpClient(JsClient())
 
 @Composable
-actual fun AsyncImage(url: String, contentDescription: String) {
+actual fun AsyncImage(url: String, contentDescription: String, modifier: Modifier) {
     val image: ImageBitmap? by produceState<ImageBitmap?>(null) {
         value = withContext(Dispatchers.Default) {
             val bytes = httpClient.get(url).readBytes()
@@ -26,7 +27,10 @@ actual fun AsyncImage(url: String, contentDescription: String) {
     }
 
     if (image != null) {
-        Image(image!!, contentDescription)
+        Image(image!!,
+            contentDescription,
+            modifier = modifier
+        )
     }
 }
 

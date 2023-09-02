@@ -40,8 +40,11 @@ sealed interface ListItemScope {
         }
 
         @Composable
-        fun NetworkImage(url: String, contentDescription: String) =
-            AsyncImage(url, contentDescription)
+        fun NetworkImage(
+            url: String,
+            contentDescription: String,
+            sizeToken: SizeToken = SizeToken.MEDIUM
+        ) = AsyncImage(url, contentDescription, Modifier.size(sizeToken.underlyingSize))
 
         @Composable
         fun StatusIcon(iconToken: IconToken, sizeToken: SizeToken = SizeToken.MEDIUM) =
