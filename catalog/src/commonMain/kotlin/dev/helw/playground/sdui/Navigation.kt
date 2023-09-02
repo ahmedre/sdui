@@ -30,6 +30,12 @@ internal val NavigationGraph = listOf(
         content = { ColorScene(it) }
     ),
     Destination(
+        title = "Progress Status",
+        subtitle = "A progress indicator",
+        icon = IconToken.CHECK,
+        content = { ProgressStatusScene(it) }
+    ),
+    Destination(
         title = "Native List",
         subtitle = "A list built natively",
         icon = IconToken.LIST,
