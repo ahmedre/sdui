@@ -29,7 +29,13 @@ internal val json = """
                   "size": "medium"
                },
                "type": "listItem",
-               "identifier": "primary_list_item_1"
+               "identifier": "primary_list_item_1",
+               "actions": [
+                  {
+                     "type": "onClick_deeplink",
+                     "deeplink": "careem://some_link_destination"
+                  }
+               ]
             }
          ]
       }

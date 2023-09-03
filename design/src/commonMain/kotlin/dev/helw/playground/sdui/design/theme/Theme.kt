@@ -5,6 +5,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.ProvidedValue
 import androidx.compose.runtime.compositionLocalOf
 import dev.helw.playground.sdui.design.core.TypographyToken
 import dev.helw.playground.sdui.design.core.color.LocalBackgroundColors
@@ -46,7 +47,7 @@ fun AppTheme(
         CompositionLocalProvider(
             LocalTextColors provides colorPalette.textColors,
             LocalBackgroundColors provides colorPalette.backgroundColors,
-            LocalThemeAlreadyApplied provides true
+            LocalThemeAlreadyApplied provides true,
         ) {
             MaterialTheme(
                 colorScheme = materialColors,

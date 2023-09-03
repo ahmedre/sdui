@@ -1,43 +1,72 @@
 package dev.helw.playground.sdui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import dev.helw.playground.sdui.design.component.Icon
-import dev.helw.playground.sdui.design.component.Label
-import dev.helw.playground.sdui.design.core.IconToken
-import dev.helw.playground.sdui.design.core.SizeToken
-import dev.helw.playground.sdui.design.core.TypographyToken
-import dev.helw.playground.sdui.design.core.color.LocalTextColors
+import dev.helw.playground.sdui.action.ActionHandler
+import dev.helw.playground.sdui.action.LocalServerDrivenUiActionHandler
+import dev.helw.playground.sdui.action.OnClick
+import dev.helw.playground.sdui.action.OnViewed
 import dev.helw.playground.sdui.design.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
+
+    private val actionHandler = object : ActionHandler {
+        override suspend fun onClick(action: OnClick) {
+            when (action) {
+                is OnClick.Deeplink -> {
+                    val message = "Deeplink to ${action.deeplink}"
+                    println("---------> ONCLICK: $message")
+                    Toast.makeText(
+                        this@MainActivity,
+                        message,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                is OnClick.InteractionEvent -> {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Event name: ${action.eventName}, data: ${action.data}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
+
+        override suspend fun onViewed(action: OnViewed) {
+            when (action) {
+                is OnViewed.ImpressionEvent -> {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Event name: ${action.eventName}, data: ${action.data}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppTheme {
-                MainScaffold()
+            CompositionLocalProvider(LocalServerDrivenUiActionHandler provides actionHandler) {
+                AppTheme {
+                    MainScaffold()
+                }
             }
         }
     }

@@ -2,6 +2,8 @@ package dev.helw.playground.sdui.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import dev.helw.playground.sdui.action.Action
+import dev.helw.playground.sdui.action.handleActions
 import dev.helw.playground.sdui.component.list.ListItemContentDescription
 import dev.helw.playground.sdui.component.list.ListItemContentTitle
 import dev.helw.playground.sdui.component.list.ListItemLeading
@@ -21,7 +23,8 @@ class ListItemComponent(
     private val leading: ListItemLeading? = null,
     private val trailing: ListItemTrailing? = null,
     private val backgroundColor: BackgroundColorToken? = null,
-    override val identifier: String
+    override val identifier: String,
+    override val actions: List<Action> = emptyList()
 ) : Component {
 
     @Composable
@@ -31,7 +34,8 @@ class ListItemComponent(
             description = description?.asListItemScope() ?: {},
             leading = leading?.asListItemScope() ?: {},
             trailing = trailing?.asListItemScope() ?: {},
-            backgroundColor = backgroundColor?.colorValue() ?: BackgroundColor.Unspecified
+            backgroundColor = backgroundColor?.colorValue() ?: BackgroundColor.Unspecified,
+            modifier = modifier.handleActions(actions)
         )
     }
 }

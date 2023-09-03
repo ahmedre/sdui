@@ -1,6 +1,8 @@
 package dev.helw.playground.sdui.parser
 
 import dev.helw.playground.sdui.action.Action
+import dev.helw.playground.sdui.action.OnClick
+import dev.helw.playground.sdui.action.OnViewed
 import dev.helw.playground.sdui.component.AsyncImageComponent
 import dev.helw.playground.sdui.component.IconComponent
 import dev.helw.playground.sdui.component.LabelComponent
@@ -28,8 +30,9 @@ object Parser {
 
         fun SerializersModuleBuilder.registerActions() {
             polymorphic(Action::class) {
-                subclass(Action.OnClick.Deeplink::class)
-                subclass(Action.OnViewed.ImpressionEvent::class)
+                subclass(OnClick.Deeplink::class)
+                subclass(OnClick.InteractionEvent::class)
+                subclass(OnViewed.ImpressionEvent::class)
             }
         }
         registerComponents()

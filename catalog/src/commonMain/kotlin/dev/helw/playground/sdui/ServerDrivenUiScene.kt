@@ -32,6 +32,7 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
     val sduiJson = remember { mutableStateOf(json) }
     val serverDrivenUiResponse = remember { mutableStateOf<ServerDrivenUiResponse?>(null) }
     val parsingResult = remember { mutableStateOf(ParsingResult.SUCCESS) }
+    val error = remember { mutableStateOf<Exception?>(null) }
 
     Column(modifier) {
         Row(
@@ -48,6 +49,16 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
                 checked = isUsingCustomJson.value,
                 onCheckedChange = { isUsingCustomJson.value = it })
         }
+        val resultMessage = when (parsingResult.value) {
+            ParsingResult.ERROR -> "Error parsing JSON: ${error.value?.message}"
+            ParsingResult.SUCCESS -> "Parsing succesful"
+        }
+
+        Label(
+            text = resultMessage,
+            textColor = LocalTextColors.current.secondary,
+            typographyToken = TypographyToken.Label.Large
+        )
         if (isUsingCustomJson.value) {
             CustomJsonField(sduiJson, parsingResult.value)
         }
@@ -58,7 +69,8 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
                 try {
                     serverDrivenUiResponse.value = Parser.parse(sduiJson.value)
                     parsingResult.value = ParsingResult.SUCCESS
-                } catch (_: Exception) {
+                } catch (e: Exception) {
+                    error.value = e
                     parsingResult.value = ParsingResult.ERROR
                 }
             }
