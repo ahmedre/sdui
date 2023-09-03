@@ -69,12 +69,14 @@ class ServerDrivenUiSerializer internal constructor(
         private var componentModuleBuilder: PolymorphicModuleBuilder<Component>.() -> Unit = {}
         private var actionModuleBuilder: PolymorphicModuleBuilder<Action>.() -> Unit = {}
 
-        fun addComponentSubclasses(block: PolymorphicModuleBuilder<Component>.() -> Unit) {
+        fun addComponentSubclasses(block: PolymorphicModuleBuilder<Component>.() -> Unit): Builder {
             componentModuleBuilder = block
+            return this
         }
 
-        fun addActionSubclasses(block: PolymorphicModuleBuilder<Action>.() -> Unit) {
+        fun addActionSubclasses(block: PolymorphicModuleBuilder<Action>.() -> Unit): Builder {
             actionModuleBuilder = block
+            return this
         }
 
         fun build(): ServerDrivenUiSerializer = ServerDrivenUiSerializer(
