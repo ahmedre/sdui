@@ -33,6 +33,7 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
     val serverDrivenUiResponse = remember { mutableStateOf<ServerDrivenUiResponse?>(null) }
     val parsingResult = remember { mutableStateOf(ParsingResult.SUCCESS) }
     val error = remember { mutableStateOf<Exception?>(null) }
+    val parser = ServerDrivenUiSerializer.default
 
     Column(modifier) {
         Row(
@@ -67,8 +68,7 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
         LaunchedEffect(sduiJson.value) {
             if (sduiJson.value.isNotEmpty()) {
                 try {
-                    serverDrivenUiResponse.value =
-                        ServerDrivenUiSerializer.default.parse(sduiJson.value)
+                    serverDrivenUiResponse.value = parser.parse(sduiJson.value)
                     parsingResult.value = ParsingResult.SUCCESS
                 } catch (e: Exception) {
                     error.value = e
