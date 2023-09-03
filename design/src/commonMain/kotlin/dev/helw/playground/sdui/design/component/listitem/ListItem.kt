@@ -12,7 +12,6 @@ fun ListItem(
     description: @Composable ListItemScope.Content.Description.() -> Unit = {},
     leading: @Composable ListItemScope.Leading.() -> Unit = {},
     trailing: @Composable ListItemScope.Trailing.() -> Unit = {},
-    onClick: () -> Unit = {},
     backgroundColor: BackgroundColor = BackgroundColor.Unspecified,
     modifier: Modifier = Modifier
 ) {
@@ -21,6 +20,6 @@ fun ListItem(
         supportingContent = { ListItemScope.Content.Description.description() },
         leadingContent = { ListItemScope.Leading.leading() },
         trailingContent = { ListItemScope.Trailing.trailing() },
-        modifier = modifier.clickable { onClick() }.background(color = backgroundColor.color)
+        modifier = modifier.background(color = backgroundColor.color)
     )
 }

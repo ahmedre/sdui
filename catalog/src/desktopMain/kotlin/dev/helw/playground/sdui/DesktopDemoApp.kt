@@ -35,8 +35,9 @@ import dev.helw.playground.sdui.design.theme.AppTheme
 
 fun main() = application {
     val windowState = rememberWindowState(size = DpSize(1280.dp, 800.dp))
-    var text by remember { mutableStateOf("") }
     val actionHandler = object : ActionHandler {
+        var text: String = ""
+
         override suspend fun onClick(action: OnClick) {
             when (action) {
                 is OnClick.Deeplink -> {
@@ -87,11 +88,6 @@ fun main() = application {
                                     .padding(top = 16.dp)
                             )
                         }
-                        Label(
-                            text = text,
-                            typographyToken = TypographyToken.Label.Large,
-                            textColor = LocalTextColors.current.primaryInverse,
-                        )
                     }
                 }
             }

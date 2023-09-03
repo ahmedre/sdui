@@ -41,7 +41,6 @@ internal fun NativeListScene(modifier: Modifier = Modifier) {
                         StatusIcon(iconToken = IconToken.ARROW_FORWARD)
                     }
                 },
-                onClick = { }
             )
         }
     }

@@ -61,7 +61,6 @@ sealed class OnViewed : Action {
 
 
 internal fun Modifier.handleActions(actions: List<Action>): Modifier = composed {
-    println("ATTACHING: $actions")
     val handler = LocalServerDrivenUiActionHandler.current
     val scope = rememberCoroutineScope()
     var localModifier = this
@@ -69,7 +68,6 @@ internal fun Modifier.handleActions(actions: List<Action>): Modifier = composed 
         localModifier = when (action) {
             is OnClick -> localModifier.clickable {
                 scope.launch { handler.onClick(action) }
-                println("ATTACHED: $action")
             }
 
             // TODO Update with impression modifier
