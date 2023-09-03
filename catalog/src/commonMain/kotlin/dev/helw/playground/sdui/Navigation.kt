@@ -47,6 +47,12 @@ internal val NavigationGraph = listOf(
         icon = IconToken.SETTINGS,
         content = { ServerDrivenUiScene(it) }
     ),
+    Destination(
+        title = "Server Driven UI: Sandbox",
+        subtitle = "UI rendered via json response with sandbox",
+        icon = IconToken.DELETE,
+        content = { SandboxScene(it) }
+    ),
 )
 
 data class Destination(
