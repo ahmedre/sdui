@@ -8,6 +8,9 @@ import dev.helw.playground.sdui.component.IconComponent
 import dev.helw.playground.sdui.component.LabelComponent
 import dev.helw.playground.sdui.component.ListComponent
 import dev.helw.playground.sdui.component.ListItemComponent
+import dev.helw.playground.sdui.component.ProgressStatusComponent
+import dev.helw.playground.sdui.component.core.ColumnComponent
+import dev.helw.playground.sdui.component.core.RowComponent
 import dev.helw.playground.sdui.model.Component
 import dev.helw.playground.sdui.model.ServerDrivenUiResponse
 import kotlinx.serialization.json.Json
@@ -29,7 +32,12 @@ class ServerDrivenUiSerializer internal constructor(
                 subclass(LabelComponent::class)
                 subclass(IconComponent::class)
                 subclass(AsyncImageComponent::class)
+                subclass(ProgressStatusComponent::class)
                 componentModuleBuilder(this)
+
+                // primitives
+                subclass(RowComponent::class)
+                subclass(ColumnComponent::class)
             }
         }
 
