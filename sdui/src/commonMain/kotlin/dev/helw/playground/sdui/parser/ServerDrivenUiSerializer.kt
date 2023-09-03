@@ -53,6 +53,10 @@ class ServerDrivenUiSerializer internal constructor(
         return json.decodeFromString(data)
     }
 
+    companion object {
+        val default = Builder().build()
+    }
+
     class Builder {
         private var componentModuleBuilder: PolymorphicModuleBuilder<Component>.() -> Unit = {}
         private var actionModuleBuilder: PolymorphicModuleBuilder<Action>.() -> Unit = {}

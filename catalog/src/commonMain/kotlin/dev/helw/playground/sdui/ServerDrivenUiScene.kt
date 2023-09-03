@@ -24,7 +24,7 @@ import dev.helw.playground.sdui.design.component.Label
 import dev.helw.playground.sdui.design.core.TypographyToken
 import dev.helw.playground.sdui.design.core.color.LocalTextColors
 import dev.helw.playground.sdui.model.ServerDrivenUiResponse
-import dev.helw.playground.sdui.parser.Parser
+import dev.helw.playground.sdui.parser.ServerDrivenUiSerializer
 
 @Composable
 internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
@@ -67,7 +67,8 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
         LaunchedEffect(sduiJson.value) {
             if (sduiJson.value.isNotEmpty()) {
                 try {
-                    serverDrivenUiResponse.value = Parser.parse(sduiJson.value)
+                    serverDrivenUiResponse.value =
+                        ServerDrivenUiSerializer.default.parse(sduiJson.value)
                     parsingResult.value = ParsingResult.SUCCESS
                 } catch (e: Exception) {
                     error.value = e
