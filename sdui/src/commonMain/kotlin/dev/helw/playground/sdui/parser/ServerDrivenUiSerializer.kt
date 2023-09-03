@@ -11,12 +11,16 @@ import dev.helw.playground.sdui.component.ListItemComponent
 import dev.helw.playground.sdui.model.Component
 import dev.helw.playground.sdui.model.ServerDrivenUiResponse
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.modules.PolymorphicModuleBuilder
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.SerializersModuleBuilder
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
 
-object Parser {
+class ServerDrivenUiSerializer internal constructor(
+    private val componentModuleBuilder: PolymorphicModuleBuilder<Component>.() -> Unit,
+    private val actionModuleBuilder: PolymorphicModuleBuilder<Action>.() -> Unit,
+) {
     private val componentModule = SerializersModule {
         fun SerializersModuleBuilder.registerComponents() {
             polymorphic(Component::class) {
@@ -25,6 +29,7 @@ object Parser {
                 subclass(LabelComponent::class)
                 subclass(IconComponent::class)
                 subclass(AsyncImageComponent::class)
+                componentModuleBuilder(this)
             }
         }
 
@@ -33,6 +38,7 @@ object Parser {
                 subclass(OnClick.Deeplink::class)
                 subclass(OnClick.InteractionEvent::class)
                 subclass(OnViewed.ImpressionEvent::class)
+                actionModuleBuilder(this)
             }
         }
         registerComponents()
@@ -45,5 +51,27 @@ object Parser {
 
     fun parse(data: String): ServerDrivenUiResponse {
         return json.decodeFromString(data)
+    }
+
+    companion object {
+        val default = Builder().build()
+    }
+
+    class Builder {
+        private var componentModuleBuilder: PolymorphicModuleBuilder<Component>.() -> Unit = {}
+        private var actionModuleBuilder: PolymorphicModuleBuilder<Action>.() -> Unit = {}
+
+        fun addComponentSubclasses(block: PolymorphicModuleBuilder<Component>.() -> Unit) {
+            componentModuleBuilder = block
+        }
+
+        fun addActionSubclasses(block: PolymorphicModuleBuilder<Action>.() -> Unit) {
+            actionModuleBuilder = block
+        }
+
+        fun build(): ServerDrivenUiSerializer = ServerDrivenUiSerializer(
+            componentModuleBuilder = componentModuleBuilder,
+            actionModuleBuilder = actionModuleBuilder
+        )
     }
 }
