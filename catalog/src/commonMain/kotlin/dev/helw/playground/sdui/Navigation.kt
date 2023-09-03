@@ -42,8 +42,8 @@ internal val NavigationGraph = listOf(
         content = { NativeListScene(it) }
     ),
     Destination(
-        title = "Server Driven List",
-        subtitle = "A list rendered via json response",
+        title = "Server Driven UI",
+        subtitle = "UI rendered via json response",
         icon = IconToken.SETTINGS,
         content = { ServerDrivenUiScene(it) }
     ),
