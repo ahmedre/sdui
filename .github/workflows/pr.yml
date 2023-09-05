@@ -1,0 +1,37 @@
+name: Pull Request
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx6G -XX:+HeapDumpOnOutOfMemoryError -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8 -XX:+UseParallelGC"'
+  GRADLE_FLAGS: '-q --stacktrace --no-configuration-cache'
+  JAVA_OPTS: '-Xms512m -Xmx4G'
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: zulu
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2.4.2
+      - name: Setup Android SDK
+        uses: amyu/setup-android@v2
+        with:
+          sdk-version: 32
+          build-tools-version: 33.0.1
+      - name: Clone Repository
+        uses: actions/checkout@v3
+      - name: Build app and tests
+        run: ./gradlew build
