@@ -60,8 +60,6 @@ kotlin {
             resources.srcDir("src/commonRes")
             dependencies {
                 implementation(compose.ui)
-                implementation(compose.material)
-                implementation(compose.uiTooling)
                 implementation(compose.desktop.currentOs)
             }
         }
@@ -71,8 +69,6 @@ kotlin {
             dependencies {
                 implementation(projects.design)
                 implementation(compose.ui)
-                implementation(compose.material)
-                implementation(compose.foundation)
             }
         }
     }
