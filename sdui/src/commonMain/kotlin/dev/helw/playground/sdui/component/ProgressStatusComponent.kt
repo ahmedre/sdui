@@ -23,6 +23,6 @@ class ProgressStatusComponent(
 
     @Composable
     override fun Content(modifier: Modifier) {
-        ProgressStatus(amount, total, size)
+        ProgressStatus(amount, total, size, modifier)
     }
 }

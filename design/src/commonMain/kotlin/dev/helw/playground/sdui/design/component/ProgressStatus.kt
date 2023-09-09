@@ -12,8 +12,8 @@ import dev.helw.playground.sdui.design.core.TypographyToken
 import dev.helw.playground.sdui.design.core.color.LocalBackgroundColors
 
 @Composable
-fun ProgressStatus(amount: Int, total: Int, size: SizeToken) {
-    Box(contentAlignment = Alignment.Center) {
+fun ProgressStatus(amount: Int, total: Int, size: SizeToken, modifier: Modifier = Modifier) {
+    Box(contentAlignment = Alignment.Center, modifier = modifier) {
         CircularProgressIndicator(
             progress = amount.toFloat() / total.toFloat(),
             modifier = Modifier.size(size.underlyingSize * 2),

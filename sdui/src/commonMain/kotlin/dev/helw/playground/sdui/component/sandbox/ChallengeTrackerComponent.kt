@@ -2,13 +2,15 @@ package dev.helw.playground.sdui.component.sandbox
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import dev.helw.playground.sdui.action.Action
 import dev.helw.playground.sdui.design.component.Label
 import dev.helw.playground.sdui.design.component.ProgressStatus
 import dev.helw.playground.sdui.design.core.SizeToken
-import dev.helw.playground.sdui.design.core.TextColor
 import dev.helw.playground.sdui.design.core.TypographyToken
 import dev.helw.playground.sdui.design.core.color.LocalTextColors
 import dev.helw.playground.sdui.model.Component
@@ -25,11 +27,14 @@ class ChallengeTrackerComponent(
     private val size: SizeToken,
     override val identifier: String,
     override val actions: List<Action> = emptyList()
-): Component {
+) : Component {
 
     @Composable
     override fun Content(modifier: Modifier) {
-        Row(modifier) {
+        Row(
+            modifier.padding(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Column {
                 Label(
                     "Challenge Tracker",
@@ -47,7 +52,7 @@ class ChallengeTrackerComponent(
                     LocalTextColors.current.secondary
                 )
             }
-            ProgressStatus(amount, total, size)
+            ProgressStatus(amount, total, size, Modifier.weight(1f))
         }
     }
 }

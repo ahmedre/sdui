@@ -22,7 +22,7 @@ internal fun SandboxScene(modifier: Modifier = Modifier) {
                 "type": "challengeTracker",
                 "amount": 3,
                 "total": 10,
-                "size": "large",
+                "size": "medium",
                 "identifier": "challengeTracker"
             }
         }
