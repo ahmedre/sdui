@@ -20,7 +20,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
             name = "Headline.Large",
             textStyle = TextStyle(
                 fontFamily = DefaultFontFamily,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.SemiBold,
                 fontSize = 32.sp,
                 lineHeight = 40.0.sp,
                 letterSpacing = 0.sp,
@@ -32,7 +32,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
             name = "Headline.Medium",
             textStyle = TextStyle(
                 fontFamily = DefaultFontFamily,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.SemiBold,
                 fontSize = 28.sp,
                 lineHeight = 36.sp,
                 letterSpacing = 0.sp,
@@ -44,7 +44,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
             name = "Headline.Small",
             textStyle = TextStyle(
                 fontFamily = DefaultFontFamily,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.SemiBold,
                 fontSize = 24.sp,
                 lineHeight = 32.sp,
                 letterSpacing = 0.sp,
