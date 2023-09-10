@@ -165,8 +165,6 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 platformStyle = DefaultPlatformTextStyle,
             )
         )
-
-        data object Detail : Label("Label.Detail", TextStyle())
     }
 
     companion object {
@@ -183,8 +181,7 @@ sealed class TypographyToken(val name: String, val textStyle: TextStyle) {
                 Body.Small,
                 Label.Large,
                 Label.Medium,
-                Label.Small,
-                Label.Detail
+                Label.Small
             )
         }
     }

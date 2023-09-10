@@ -4,17 +4,18 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import dev.helw.playground.sdui.design.component.AsyncImage
 import dev.helw.playground.sdui.design.component.Icon
+import dev.helw.playground.sdui.design.component.Label
 import dev.helw.playground.sdui.design.core.BackgroundColor
 import dev.helw.playground.sdui.design.core.IconToken
 import dev.helw.playground.sdui.design.core.SizeToken
 import dev.helw.playground.sdui.design.core.TypographyToken
+import dev.helw.playground.sdui.design.core.color.LocalTextColors
 
 sealed interface ListItemScope {
     data object Leading : ListItemScope {
@@ -32,9 +33,10 @@ sealed interface ListItemScope {
                     .clip(CircleShape)
                     .background(backgroundColor.color)
             ) {
-                Text(
+                Label(
                     text = text,
-                    style = typography.textStyle
+                    typographyToken = typography,
+                    textColor = LocalTextColors.current.primary
                 )
             }
         }
@@ -55,14 +57,22 @@ sealed interface ListItemScope {
         data object Title : Content {
             @Composable
             fun Title(text: String) {
-                Text(text = text, style = TypographyToken.Title.Medium.textStyle)
+                Label(
+                    text = text,
+                    typographyToken = TypographyToken.Title.Medium,
+                    textColor = LocalTextColors.current.primary
+                )
             }
         }
 
         data object Description : Content {
             @Composable
             fun Description(text: String) {
-                Text(text = text, style = TypographyToken.Label.Medium.textStyle)
+                Label(
+                    text = text,
+                    typographyToken = TypographyToken.Label.Medium,
+                    textColor = LocalTextColors.current.secondary
+                )
             }
         }
     }
@@ -70,7 +80,11 @@ sealed interface ListItemScope {
     data object Trailing : ListItemScope {
         @Composable
         fun Detail(text: String) {
-            Text(text = text, style = TypographyToken.Label.Detail.textStyle)
+            Label(
+                text = text,
+                typographyToken = TypographyToken.Label.Large,
+                textColor = LocalTextColors.current.tertiary
+            )
         }
 
         @Composable

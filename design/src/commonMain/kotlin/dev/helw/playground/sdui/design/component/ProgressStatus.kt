@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import dev.helw.playground.sdui.design.core.SizeToken
 import dev.helw.playground.sdui.design.core.TypographyToken
 import dev.helw.playground.sdui.design.core.color.LocalBackgroundColors
+import dev.helw.playground.sdui.design.core.color.LocalTextColors
 
 @Composable
 fun ProgressStatus(amount: Int, total: Int, size: SizeToken, modifier: Modifier = Modifier) {
@@ -21,8 +22,8 @@ fun ProgressStatus(amount: Int, total: Int, size: SizeToken, modifier: Modifier 
             color = LocalBackgroundColors.current.onTertiary.color
         )
 
-        val typography = size.toTypographyToken().textStyle
-        Text("$amount/$total", style = typography)
+        val typography = size.toTypographyToken()
+        Label("$amount/$total", typographyToken = typography, LocalTextColors.current.primary)
     }
 }
 
