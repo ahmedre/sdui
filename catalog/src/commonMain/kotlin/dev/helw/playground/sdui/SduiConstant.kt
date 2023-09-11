@@ -1,327 +1,313 @@
 package dev.helw.playground.sdui
 
 internal val json = """
-   {
+    {
       "version": 1,
       "root": {
-         "type": "list",
-         "identifier": "primary_list",
-         "contents": [
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Ahmed El-Helw"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "Supreme Commander of Android"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "AH",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_0",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://ahmed.elhelw"
-                  }
-               ]
+        "type": "list",
+        "identifier": "primary_list",
+        "contents": [
+          {
+            "title": {
+              "type": "title",
+              "text": "Kiryu Kazuma"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Abdulahi Osoble"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "AO",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_1",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://abdulahi.osoble"
-                  }
-               ]
+            "description": {
+              "type": "description",
+              "text": "Former Yakuza member"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Carlo Marinangeli"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "Nonni"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "CM",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_2",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://carlo.marinangeli"
-                  }
-               ]
+            "leading": {
+              "type": "letterCircle",
+              "text": "KK",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Efeturi Money"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "Sheikh Ul Gradle"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "EM",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_3",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://efeturi.money"
-                  }
-               ]
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Marco Signoretto"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "Father of Merlin and Mockingbird"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "MS",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_4",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://marco.signoretto"
-                  }
-               ]
+            "type": "listItem",
+            "identifier": "primary_list_item_0",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/kiryu"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Majima Goro"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Basit Parkar"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "BP",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_5",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://basit.parkar"
-                  }
-               ]
+            "description": {
+              "type": "description",
+              "text": "Mad Dog of Shimano"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Mina Eweida"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "ME",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_6",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://mina.eweida"
-                  }
-               ]
+            "leading": {
+              "type": "letterCircle",
+              "text": "MG",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Selcuk Kizilkaya"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "iOS wizard"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "SK",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_7",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://selcuk.kizilkaya"
-                  }
-               ]
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Mostafa Amer"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "Supreme Commander of iOS"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "MA",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_8",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://mostafa.amer"
-                  }
-               ]
+            "type": "listItem",
+            "identifier": "primary_list_item_1",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/majima"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Akiyama Shun"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Ilter Cengiz"
-               },
-               "description": {
-                  "type": "description",
-                  "text": "Aurora Godfather"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "IC",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_9",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://ilter.cengiz"
-                  }
-               ]
+            "description": {
+              "type": "description",
+              "text": "Moneylender with a heart of gold"
             },
-            {
-               "title": {
-                  "type": "title",
-                  "text": "Cristian Botogan"
-               },
-               "leading": {
-                  "type": "letterCircle",
-                  "text": "CB",
-                  "size": "medium",
-                  "typography": "Label.Medium",
-                  "backgroundColor": "primary"
-               },
-               "trailing": {
-                  "type": "statusIcon",
-                  "icon": "check",
-                  "size": "medium"
-               },
-               "type": "listItem",
-               "identifier": "primary_list_item_10",
-               "actions": [
-                  {
-                     "type": "onClick_deeplink",
-                     "deeplink": "careem://cristian.botogan"
-                  }
-               ]
-            }
-         ]
+            "leading": {
+              "type": "letterCircle",
+              "text": "AS",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_2",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/akiyama"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Saejima Taiga"
+            },
+            "description": {
+              "type": "description",
+              "text": "Prisoner with incredible strength"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "ST",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_3",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/saejima"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Kazama Shintaro"
+            },
+            "description": {
+              "type": "description",
+              "text": "Kiryu's foster father"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "KS",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_4",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/kazama"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Date Makoto"
+            },
+            "description": {
+              "type": "description",
+              "text": "Detective and Kiryu's ally"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "DM",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_5",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/date"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Makimura Makoto"
+            },
+            "description": {
+              "type": "description",
+              "text": "A mysterious woman"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "MM",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_6",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/makimura"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Nishikiyama Akira"
+            },
+            "description": {
+              "type": "description",
+              "text": "Kiryu's childhood friend"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "NA",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_7",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/nishikiyama"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Haruka Sawamura"
+            },
+            "description": {
+              "type": "description",
+              "text": "Kiryu's adopted daughter"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "HS",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_8",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/haruka"
+              }
+            ]
+          },
+          {
+            "title": {
+              "type": "title",
+              "text": "Kashiwagi Osamu"
+            },
+            "description": {
+              "type": "description",
+              "text": "Kiryu's loyal friend"
+            },
+            "leading": {
+              "type": "letterCircle",
+              "text": "KO",
+              "size": "medium",
+              "typography": "Label.Medium",
+              "backgroundColor": "primary"
+            },
+            "trailing": {
+              "type": "statusIcon",
+              "icon": "check",
+              "size": "medium"
+            },
+            "type": "listItem",
+            "identifier": "primary_list_item_9",
+            "actions": [
+              {
+                "type": "onClick_deeplink",
+                "deeplink": "https://yakuza.sega.com/kashiwagi"
+              }
+            ]
+          }
+        ]
       }
-   }
+    }
 """.trimIndent()

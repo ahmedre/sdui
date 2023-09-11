@@ -46,7 +46,7 @@ sealed interface ListItemScope {
             url: String,
             contentDescription: String,
             sizeToken: SizeToken = SizeToken.MEDIUM
-        ) = AsyncImage(url, contentDescription, Modifier.size(sizeToken.underlyingSize))
+        ) = AsyncImage(url, contentDescription, sizeToken, Modifier.size(sizeToken.underlyingSize))
 
         @Composable
         fun StatusIcon(iconToken: IconToken, sizeToken: SizeToken = SizeToken.MEDIUM) =

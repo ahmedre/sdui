@@ -1,12 +1,14 @@
 package dev.helw.playground.sdui.design.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.toComposeImageBitmap
+import dev.helw.playground.sdui.design.core.SizeToken
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.js.JsClient
 import io.ktor.client.request.get
@@ -18,7 +20,7 @@ import org.jetbrains.skia.Image
 private val httpClient = HttpClient(JsClient())
 
 @Composable
-actual fun AsyncImage(url: String, contentDescription: String, modifier: Modifier) {
+actual fun AsyncImage(url: String, contentDescription: String, size: SizeToken, modifier: Modifier) {
     val image: ImageBitmap? by produceState<ImageBitmap?>(null) {
         value = withContext(Dispatchers.Default) {
             val bytes = httpClient.get(url).readBytes()
@@ -29,7 +31,7 @@ actual fun AsyncImage(url: String, contentDescription: String, modifier: Modifie
     if (image != null) {
         Image(image!!,
             contentDescription,
-            modifier = modifier
+            modifier = modifier.size(size.underlyingSize)
         )
     }
 }
