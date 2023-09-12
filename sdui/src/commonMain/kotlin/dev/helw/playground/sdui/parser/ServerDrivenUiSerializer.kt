@@ -53,7 +53,7 @@ class ServerDrivenUiSerializer internal constructor(
         registerActions()
     }
 
-    private val json = Json {
+    val json = Json {
         serializersModule = componentModule
     }
 
