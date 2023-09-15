@@ -34,5 +34,7 @@ private let viewTypeMapping: [String: any (View & Decodable).Type] = [
   "label": Label.self,
   "icon": Icon.self,
   "listItem": ListItem.self,
+  "row": Row.self,
+  "column": Column.self,
   "progressStatus": ProgressStatus.self
 ]

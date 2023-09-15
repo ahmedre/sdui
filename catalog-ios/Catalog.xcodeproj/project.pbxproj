@@ -37,6 +37,8 @@
 		C10845F62AADFBDE0011DB41 /* ListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845F52AADFBDE0011DB41 /* ListScene.swift */; };
 		C10845F82AAE664D0011DB41 /* ServerDrivenUiScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845F72AAE664D0011DB41 /* ServerDrivenUiScene.swift */; };
 		C10845FB2AAE71190011DB41 /* SDUIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845FA2AAE71190011DB41 /* SDUIList.swift */; };
+		C1FA66802AB4B4DD00CE23B9 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA667F2AB4B4DD00CE23B9 /* Row.swift */; };
+		C1FA66822AB4B51600CE23B9 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA66812AB4B51600CE23B9 /* Column.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		C10845F52AADFBDE0011DB41 /* ListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScene.swift; sourceTree = "<group>"; };
 		C10845F72AAE664D0011DB41 /* ServerDrivenUiScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDrivenUiScene.swift; sourceTree = "<group>"; };
 		C10845FA2AAE71190011DB41 /* SDUIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIList.swift; sourceTree = "<group>"; };
+		C1FA667F2AB4B4DD00CE23B9 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		C1FA66812AB4B51600CE23B9 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				C10845FA2AAE71190011DB41 /* SDUIList.swift */,
+				C1FA667F2AB4B4DD00CE23B9 /* Row.swift */,
+				C1FA66812AB4B51600CE23B9 /* Column.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -280,7 +286,9 @@
 				C10845E02AAD357C0011DB41 /* ListItem.swift in Sources */,
 				C10845D22AABC8310011DB41 /* SizeToken.swift in Sources */,
 				C10845C32AABA4170011DB41 /* Typography.swift in Sources */,
+				C1FA66802AB4B4DD00CE23B9 /* Row.swift in Sources */,
 				C10845F22AADF7F20011DB41 /* ColorScene.swift in Sources */,
+				C1FA66822AB4B51600CE23B9 /* Column.swift in Sources */,
 				C10845FB2AAE71190011DB41 /* SDUIList.swift in Sources */,
 				C10845DE2AAD335B0011DB41 /* ListItemTrailing.swift in Sources */,
 				C10845EC2AADD6260011DB41 /* TypographyScene.swift in Sources */,
