@@ -40,6 +40,10 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material3)
                 implementation(libs.kotlinx.serialization.json)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.serialization.json)
+                implementation(libs.ktor.client.contentNegotiation)
+                implementation(libs.ktor.client.logging)
             }
         }
 
@@ -53,6 +57,7 @@ kotlin {
                 implementation(libs.androidx.compose.material)
                 implementation(libs.androidx.activity.compose)
                 implementation(libs.androidx.navigation.compose)
+                implementation(libs.ktor.client.okhttp)
             }
         }
 
@@ -61,6 +66,7 @@ kotlin {
             dependencies {
                 implementation(compose.ui)
                 implementation(compose.desktop.currentOs)
+                implementation(libs.ktor.client.okhttp)
             }
         }
 
@@ -69,6 +75,7 @@ kotlin {
             dependencies {
                 implementation(projects.design)
                 implementation(compose.ui)
+                implementation(libs.ktor.client.js)
             }
         }
     }
