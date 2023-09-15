@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "root": {
+    "type": "list",
+    "identifier": "primary_list",
+    "contents": [
+      {
+        "title": {
+          "type": "title",
+          "text": "Kiryu Kazuma"
+        },
+        "description": {
+          "type": "description",
+          "text": "Former Yakuza member"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/e/e6/Y6_-_Character_Profile_-_Kazuma_Kiryu.png/revision/latest/scale-to-width-down/700?cb=20220814001618",
+          "contentDescription": "image for Kiryu Kazuma",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_0",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/kiryu"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Majima Goro"
+        },
+        "description": {
+          "type": "description",
+          "text": "Mad Dog of Shimano"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/6/66/Y6_-_Character_Profile_-_Goro_Majima.png/revision/latest/scale-to-width-down/700?cb=20230726020048",
+          "contentDescription": "image for Majima Goro",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_1",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/majima"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Akiyama Shun"
+        },
+        "description": {
+          "type": "description",
+          "text": "Moneylender with a heart of gold"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/7/79/Y6_-_Character_Profile_-_Shun_Akiyama.png/revision/latest/scale-to-width-down/700?cb=20211030205700",
+          "contentDescription": "image for Akiyama Shun",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_2",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/akiyama"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Saejima Taiga"
+        },
+        "description": {
+          "type": "description",
+          "text": "Prisoner with incredible strength"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/e/e4/Y6_-_Character_Profile_-_Taiga_Saejima.png/revision/latest/scale-to-width-down/700?cb=20210612211303",
+          "contentDescription": "image for Saejima Taiga",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_3",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/saejima"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Kazama Shintaro"
+        },
+        "description": {
+          "type": "description",
+          "text": "Kiryu's foster father"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/4/46/Y0_-_Character_Profile_-_Shintaro_Kazama.png/revision/latest/scale-to-width-down/700?cb=20230719032801",
+          "contentDescription": "image for Kazama Shintaro",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_4",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/kazama"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Date Makoto"
+        },
+        "description": {
+          "type": "description",
+          "text": "Detective and Kiryu's ally"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/6/60/Y6_-_Character_Profile_-_Makoto_Date.png/revision/latest/scale-to-width-down/700?cb=20220814001702",
+          "contentDescription": "image for Date Makoto",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_5",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/date"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Makimura Makoto"
+        },
+        "description": {
+          "type": "description",
+          "text": "A mysterious woman"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/9/96/YK2_-_Character_Profile_-_Makoto_Makimura.png/revision/latest/scale-to-width-down/700?cb=20230719035439",
+          "contentDescription": "image for Makimura Makoto",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_6",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/makimura"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Nishikiyama Akira"
+        },
+        "description": {
+          "type": "description",
+          "text": "Kiryu's childhood friend"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/5/57/Y0_-_Character_Profile_-_Akira_Nishikiyama.png/revision/latest/scale-to-width-down/700?cb=20221004174830",
+          "contentDescription": "image for Nishikiyama Akira",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_7",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/nishikiyama"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Haruka Sawamura"
+        },
+        "description": {
+          "type": "description",
+          "text": "Kiryu's adopted daughter"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/a/aa/Y6_-_Character_Profile_-_Haruka_Sawamura.png/revision/latest/scale-to-width-down/700?cb=20230605071626",
+          "contentDescription": "image for Haruka Sawamura",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_8",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/haruka"
+          }
+        ]
+      },
+      {
+        "title": {
+          "type": "title",
+          "text": "Kashiwagi Osamu"
+        },
+        "description": {
+          "type": "description",
+          "text": "Kiryu's loyal friend"
+        },
+        "leading": {
+          "type": "networkImage",
+          "url": "https://static.wikia.nocookie.net/yakuza/images/d/d0/YK1_-_Character_Profile_-_Osamu_Kashiwagi.png/revision/latest/scale-to-width-down/700?cb=20230709223526",
+          "contentDescription": "image for Kashiwagi Osamu",
+          "size": "small"
+        },
+        "trailing": {
+          "type": "statusIcon",
+          "icon": "check",
+          "size": "medium"
+        },
+        "type": "listItem",
+        "identifier": "primary_list_item_9",
+        "actions": [
+          {
+            "type": "onClick_deeplink",
+            "deeplink": "https://yakuza.sega.com/kashiwagi"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -33,10 +33,12 @@ sealed class ListItemLeading {
     @Serializable
     data class NetworkImage(
         val url: String,
-        val contentDescription: String
+        val contentDescription: String,
+        @Serializable(with = SizeTokenSerializer::class)
+        val size: SizeToken
     ) : ListItemLeading() {
 
         override fun asListItemScope(): @Composable ListItemScope.Leading.() -> Unit =
-            { NetworkImage(url, contentDescription) }
+            { NetworkImage(url, contentDescription, size) }
     }
 }
