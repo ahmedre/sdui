@@ -15,13 +15,13 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/e/e6/Y6_-_Character_Profile_-_Kazuma_Kiryu.png/revision/latest/scale-to-width-down/700?cb=20220814001618",
+          "url": "http://localhost:8000/images/kiryu.png",
           "contentDescription": "image for Kiryu Kazuma",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
-          "icon": "check",
+          "icon": "favorite",
           "size": "medium"
         },
         "type": "listItem",
@@ -44,9 +44,9 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/6/66/Y6_-_Character_Profile_-_Goro_Majima.png/revision/latest/scale-to-width-down/700?cb=20230726020048",
+          "url": "http://localhost:8000/images/majima.png",
           "contentDescription": "image for Majima Goro",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
@@ -73,13 +73,13 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/7/79/Y6_-_Character_Profile_-_Shun_Akiyama.png/revision/latest/scale-to-width-down/700?cb=20211030205700",
+          "url": "http://localhost:8000/images/akiyama.png",
           "contentDescription": "image for Akiyama Shun",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
-          "icon": "check",
+          "icon": "list",
           "size": "medium"
         },
         "type": "listItem",
@@ -102,13 +102,13 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/e/e4/Y6_-_Character_Profile_-_Taiga_Saejima.png/revision/latest/scale-to-width-down/700?cb=20210612211303",
+          "url": "http://localhost:8000/images/saejima.png",
           "contentDescription": "image for Saejima Taiga",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
-          "icon": "check",
+          "icon": "place",
           "size": "medium"
         },
         "type": "listItem",
@@ -131,13 +131,13 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/4/46/Y0_-_Character_Profile_-_Shintaro_Kazama.png/revision/latest/scale-to-width-down/700?cb=20230719032801",
+          "url": "http://localhost:8000/images/kazama.png",
           "contentDescription": "image for Kazama Shintaro",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
-          "icon": "check",
+          "icon": "delete",
           "size": "medium"
         },
         "type": "listItem",
@@ -160,13 +160,13 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/6/60/Y6_-_Character_Profile_-_Makoto_Date.png/revision/latest/scale-to-width-down/700?cb=20220814001702",
+          "url": "http://localhost:8000/images/date.png",
           "contentDescription": "image for Date Makoto",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
-          "icon": "check",
+          "icon": "info",
           "size": "medium"
         },
         "type": "listItem",
@@ -189,9 +189,9 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/9/96/YK2_-_Character_Profile_-_Makoto_Makimura.png/revision/latest/scale-to-width-down/700?cb=20230719035439",
+          "url": "http://localhost:8000/images/makimura.png",
           "contentDescription": "image for Makimura Makoto",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
@@ -218,9 +218,9 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/5/57/Y0_-_Character_Profile_-_Akira_Nishikiyama.png/revision/latest/scale-to-width-down/700?cb=20221004174830",
+          "url": "http://localhost:8000/images/nishkiyama.png",
           "contentDescription": "image for Nishikiyama Akira",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
@@ -247,9 +247,9 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/a/aa/Y6_-_Character_Profile_-_Haruka_Sawamura.png/revision/latest/scale-to-width-down/700?cb=20230605071626",
+          "url": "http://localhost:8000/images/haruka.png",
           "contentDescription": "image for Haruka Sawamura",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
@@ -276,13 +276,13 @@
         },
         "leading": {
           "type": "networkImage",
-          "url": "https://static.wikia.nocookie.net/yakuza/images/d/d0/YK1_-_Character_Profile_-_Osamu_Kashiwagi.png/revision/latest/scale-to-width-down/700?cb=20230709223526",
+          "url": "http://localhost:8000/images/kashiwagi.png",
           "contentDescription": "image for Kashiwagi Osamu",
-          "size": "small"
+          "size": "large"
         },
         "trailing": {
           "type": "statusIcon",
-          "icon": "check",
+          "icon": "home",
           "size": "medium"
         },
         "type": "listItem",
