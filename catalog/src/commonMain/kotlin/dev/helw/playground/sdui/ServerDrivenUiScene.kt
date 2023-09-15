@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -64,7 +63,7 @@ internal fun ServerDrivenUiScene(modifier: Modifier = Modifier) {
 
         val resultMessage = when (parsingResult.value) {
             ParsingResult.ERROR -> "Error parsing JSON: ${error.value?.message}"
-            ParsingResult.SUCCESS -> "Parsing succesful"
+            ParsingResult.SUCCESS -> "Parsing successful"
         }
 
         Label(

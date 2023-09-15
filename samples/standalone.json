@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "root": {
+    "type" : "row",
+    "contents" : [
+      {
+        "type" : "column",
+        "identifier" : "challengeTrackerColumn",
+        "contents" : [
+          {
+            "color" : "tertiary",
+            "identifier" : "challengeTrackerLabel1",
+            "text" : "Challenge Tracker",
+            "type" : "label",
+            "typography" : "Title.Small"
+          },
+          {
+            "color" : "primary",
+            "identifier" : "challengeTrackerLabel2",
+            "text" : "Place your first order",
+            "type" : "label",
+            "typography" : "Headline.Small"
+          },
+          {
+            "color" : "secondary",
+            "identifier" : "challengeTrackerLabel3",
+            "text" : "Order and earn a free delivery!",
+            "type" : "label",
+            "typography" : "Title.Medium"
+          }
+        ],
+        "modifiers" : [
+          {
+            "end" : 16,
+            "type" : "padding"
+          }
+        ]
+      },
+      {
+        "amount" : 5,
+        "identifier" : "challengeTrackerProgressStatus",
+        "size" : "large",
+        "total" : 10,
+        "type" : "progressStatus"
+      }
+    ],
+    "identifier" : "challengeTrackerRow",
+    "modifiers" : [
+      {
+        "color" : "primary",
+        "shape" : "roundedCorners",
+        "type" : "background"
+      },
+      {
+        "bottom" : 16,
+        "end" : 16,
+        "start" : 16,
+        "top" : 16,
+        "type" : "padding"
+      }
+    ]
+  }
+}
