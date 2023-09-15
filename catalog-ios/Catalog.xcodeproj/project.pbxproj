@@ -37,7 +37,6 @@
 		C10845F62AADFBDE0011DB41 /* ListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845F52AADFBDE0011DB41 /* ListScene.swift */; };
 		C10845F82AAE664D0011DB41 /* ServerDrivenUiScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845F72AAE664D0011DB41 /* ServerDrivenUiScene.swift */; };
 		C10845FB2AAE71190011DB41 /* SDUIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845FA2AAE71190011DB41 /* SDUIList.swift */; };
-		C10845FF2AAFCCF50011DB41 /* ServerDrivenUiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10845FE2AAFCCF50011DB41 /* ServerDrivenUiConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +71,6 @@
 		C10845F52AADFBDE0011DB41 /* ListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScene.swift; sourceTree = "<group>"; };
 		C10845F72AAE664D0011DB41 /* ServerDrivenUiScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDrivenUiScene.swift; sourceTree = "<group>"; };
 		C10845FA2AAE71190011DB41 /* SDUIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIList.swift; sourceTree = "<group>"; };
-		C10845FE2AAFCCF50011DB41 /* ServerDrivenUiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDrivenUiConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +189,6 @@
 				C10845F32AADFB150011DB41 /* ProgressScene.swift */,
 				C10845F52AADFBDE0011DB41 /* ListScene.swift */,
 				C10845F72AAE664D0011DB41 /* ServerDrivenUiScene.swift */,
-				C10845FE2AAFCCF50011DB41 /* ServerDrivenUiConstants.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -298,7 +295,6 @@
 				C10845F62AADFBDE0011DB41 /* ListScene.swift in Sources */,
 				C10845F02AADD9690011DB41 /* SizeScene.swift in Sources */,
 				C10845F82AAE664D0011DB41 /* ServerDrivenUiScene.swift in Sources */,
-				C10845FF2AAFCCF50011DB41 /* ServerDrivenUiConstants.swift in Sources */,
 				C10845D42AABC93D0011DB41 /* Icon.swift in Sources */,
 				C10845E22AAD48B90011DB41 /* ProgressStatus.swift in Sources */,
 				C10845B42AABA0D00011DB41 /* CatalogApp.swift in Sources */,
