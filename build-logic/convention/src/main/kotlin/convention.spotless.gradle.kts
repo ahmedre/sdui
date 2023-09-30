@@ -1,7 +1,13 @@
+/**
+ * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 import com.diffplug.gradle.spotless.SpotlessExtension
 import org.gradle.kotlin.dsl.apply
 
-subprojects {
+allprojects {
     afterEvaluate {
         apply(plugin = "com.diffplug.spotless")
         extensions.configure<SpotlessExtension> {
