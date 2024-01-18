@@ -11,8 +11,8 @@ plugins {
 }
 
 compose {
-    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.0")
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.10")
+    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.21")
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.22")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
