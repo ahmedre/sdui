@@ -106,7 +106,7 @@ android {
     }
 
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = "1.5.10"
+    composeOptions.kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
 
     packaging {
         resources {
