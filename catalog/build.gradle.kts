@@ -54,7 +54,6 @@ kotlin {
 
         val androidMain by getting {
             dependencies {
-                implementation(libs.coil.compose)
                 implementation(libs.androidx.compose.ui)
                 implementation(libs.androidx.compose.ui.tooling)
                 implementation(libs.androidx.compose.ui.tooling.preview)
