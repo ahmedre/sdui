@@ -41,12 +41,6 @@ kotlin {
                 implementation(libs.kotlinx.serialization.json)
             }
         }
-
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.coil.compose)
-            }
-        }
     }
 }
 

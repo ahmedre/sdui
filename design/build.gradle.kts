@@ -37,24 +37,31 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
+                implementation(libs.coil)
+                implementation(libs.coil.compose)
             }
         }
 
         val androidMain by getting {
             dependencies {
-                implementation(libs.coil.compose)
+                implementation(libs.coil.network.okhttp)
                 implementation(compose.uiTooling)
             }
         }
 
         val desktopMain by getting {
             resources.srcDir("src/commonRes")
+            dependencies {
+                implementation(libs.kotlinx.coroutines.swing)
+                implementation(libs.coil.network.okhttp)
+            }
         }
 
         val jsMain by getting {
             dependencies {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                implementation(libs.coil.network.ktor)
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.js)
             }
