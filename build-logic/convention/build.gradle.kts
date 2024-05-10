@@ -8,7 +8,6 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     `kotlin-dsl`
 }
@@ -25,7 +24,6 @@ tasks.withType<KotlinJvmCompile>().configureEach {
 }
 
 dependencies {
-//    compileOnly(libs.gradle.android)
     compileOnly(libs.gradle.spotless)
     compileOnly(libs.gradle.kotlin)
 }
