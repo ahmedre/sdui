@@ -12,13 +12,12 @@ plugins {
 }
 
 compose {
-    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.21")
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.22")
+    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.22")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    applyDefaultHierarchyTemplate()
 
     jvm("desktop")
 
@@ -107,7 +106,7 @@ android {
     }
 
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = "1.5.2"
+    composeOptions.kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
 
     packaging {
         resources {
