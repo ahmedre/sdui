@@ -12,7 +12,7 @@ plugins {
 }
 
 compose {
-    kotlinCompilerPlugin = dependencies.compiler.forKotlin("1.9.22")
+    kotlinCompilerPlugin = dependencies.compiler.forKotlin(libs.versions.kotlin.get())
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
