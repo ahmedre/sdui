@@ -68,6 +68,7 @@ kotlin {
                 implementation(compose.foundation)
                 implementation(compose.material3)
                 implementation(libs.kotlinx.serialization.json)
+
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.serialization.json)
                 implementation(libs.ktor.client.contentNegotiation)
@@ -97,8 +98,7 @@ kotlin {
             }
         }
 
-        val webMain by creating {
-            dependsOn(commonMain)
+        val jsMain by getting {
             resources.srcDirs("src/commonRes", "../sdui/src/commonRes")
             dependencies {
                 implementation(projects.design)
@@ -107,12 +107,19 @@ kotlin {
             }
         }
 
-        val jsMain by getting {
-            dependsOn(webMain)
-        }
-
         val wasmJsMain by getting {
-            dependsOn(webMain)
+            dependsOn(commonMain)
+            resources.srcDirs("src/commonRes", "../sdui/src/commonRes")
+            dependencies {
+                implementation(projects.design)
+                implementation(compose.ui)
+
+                val wasmKtor = "3.0.0-wasm1"
+                implementation("io.ktor:ktor-client-core:$wasmKtor")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$wasmKtor")
+                implementation("io.ktor:ktor-client-content-negotiation:$wasmKtor")
+                implementation("io.ktor:ktor-client-logging:$wasmKtor")
+            }
         }
     }
 }
