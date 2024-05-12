@@ -4,6 +4,14 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+
+/**
+ * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
@@ -21,6 +29,8 @@ kotlin {
     jvm("desktop")
 
     js(IR) { browser() }
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs() { browser() }
 
     androidTarget {
         compilations.all {
@@ -57,14 +67,25 @@ kotlin {
             }
         }
 
-        val jsMain by getting {
+        val webMain by creating {
+            dependsOn(commonMain)
             dependencies {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 implementation(libs.coil.network.ktor)
                 implementation(libs.ktor.client.core)
+            }
+        }
+
+        val jsMain by getting {
+            dependsOn(webMain)
+            dependencies {
                 implementation(libs.ktor.client.js)
             }
+        }
+
+        val wasmJsMain by getting {
+            dependsOn(webMain)
         }
     }
 }
