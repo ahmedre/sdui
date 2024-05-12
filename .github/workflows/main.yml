@@ -10,13 +10,13 @@ concurrency:
 
 env:
   GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx6G -XX:+HeapDumpOnOutOfMemoryError -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8 -XX:+UseParallelGC"'
-  GRADLE_FLAGS: '-q --stacktrace --no-configuration-cache'
-  JAVA_OPTS: '-Xms512m -Xmx4G'
+  GRADLE_FLAGS: "-q --stacktrace --no-configuration-cache"
+  JAVA_OPTS: "-Xms512m -Xmx4G"
 
 jobs:
   build:
     name: Build
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -25,12 +25,21 @@ jobs:
           distribution: zulu
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.4.2
-      - name: Setup Android SDK
-        uses: amyu/setup-android@v2
-        with:
-          sdk-version: 32
-          build-tools-version: 33.0.1
       - name: Clone Repository
         uses: actions/checkout@v3
       - name: Build app and tests
-        run: ./gradlew build
+        run: ./gradlew catalog:jsBrowserDistribution
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: catalog/build/dist/js/productionExecutable
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
