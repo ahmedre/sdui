@@ -4,6 +4,15 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
+
+/**
+ * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.application)
@@ -24,6 +33,20 @@ kotlin {
     js(IR) {
         moduleName = "catalog"
         browser()
+        binaries.executable()
+    }
+
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        browser {
+            commonWebpackConfig {
+                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
+                    static = (static ?: mutableListOf()).apply {
+                        add(project.projectDir.path)
+                    }
+                }
+            }
+        }
         binaries.executable()
     }
 
@@ -74,13 +97,22 @@ kotlin {
             }
         }
 
-        val jsMain by getting {
+        val webMain by creating {
+            dependsOn(commonMain)
             resources.srcDirs("src/commonRes", "../sdui/src/commonRes")
             dependencies {
                 implementation(projects.design)
                 implementation(compose.ui)
                 implementation(libs.ktor.client.js)
             }
+        }
+
+        val jsMain by getting {
+            dependsOn(webMain)
+        }
+
+        val wasmJsMain by getting {
+            dependsOn(webMain)
         }
     }
 }
