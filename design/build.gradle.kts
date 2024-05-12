@@ -30,7 +30,7 @@ kotlin {
 
     js(IR) { browser() }
     @OptIn(ExperimentalWasmDsl::class)
-    wasmJs() { browser() }
+    wasmJs { browser() }
 
     androidTarget {
         compilations.all {
@@ -73,7 +73,6 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 implementation(libs.coil.network.ktor)
-                implementation(libs.ktor.client.core)
             }
         }
 
@@ -81,11 +80,16 @@ kotlin {
             dependsOn(webMain)
             dependencies {
                 implementation(libs.ktor.client.js)
+                implementation(libs.ktor.client.core)
             }
         }
 
         val wasmJsMain by getting {
             dependsOn(webMain)
+            dependencies {
+                val wasmKtor = "3.0.0-wasm1"
+                implementation("io.ktor:ktor-client-core:$wasmKtor")
+            }
         }
     }
 }
