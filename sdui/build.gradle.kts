@@ -17,10 +17,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrain.compose)
-}
-
-compose {
-    kotlinCompilerPlugin = dependencies.compiler.forKotlin(libs.versions.kotlin.get())
+    alias(libs.plugins.kotlin.compose)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)

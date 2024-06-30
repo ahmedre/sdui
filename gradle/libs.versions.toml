@@ -1,15 +1,15 @@
 [versions]
 activity-compose = "1.9.0"
-agp = "8.4.0"
+agp = "8.4.2"
 androidx-material = "1.6.7"
 coil = "3.0.0-alpha06"
 coroutines = "1.8.1"
 foundation = "1.6.7"
-kotlin = "1.9.23"
+kotlin = "2.0.0"
 kotlinx-serialization = "1.6.3"
 ktor = "2.3.8"
-compose-compiler = "1.5.13"
-compose-jb = "1.6.1"
+compose-compiler = "1.5.14"
+compose-jb = "1.6.11"
 spotless = "6.14.0"
 
 [libraries]
@@ -48,5 +48,6 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 jetbrain-compose = { id = "org.jetbrains.compose", version.ref = "compose-jb" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
