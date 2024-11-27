@@ -1,18 +1,13 @@
 /**
- * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
+ * Copyright (c) 2024 Ahmed El-Helw and Abdulahi Osoble
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
-/**
- * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.application)
@@ -48,10 +43,8 @@ kotlin {
     }
 
     androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_1_8)
         }
     }
 
@@ -105,17 +98,15 @@ kotlin {
         }
 
         val wasmJsMain by getting {
-            dependsOn(commonMain)
             resources.srcDirs("src/commonRes", "../sdui/src/commonRes")
             dependencies {
                 implementation(projects.design)
                 implementation(compose.ui)
 
-                val wasmKtor = "3.0.0-wasm1"
-                implementation("io.ktor:ktor-client-core:$wasmKtor")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:$wasmKtor")
-                implementation("io.ktor:ktor-client-content-negotiation:$wasmKtor")
-                implementation("io.ktor:ktor-client-logging:$wasmKtor")
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.serialization.json)
+                implementation(libs.ktor.client.contentNegotiation)
+                implementation(libs.ktor.client.logging)
             }
         }
     }
@@ -135,13 +126,12 @@ android {
     defaultConfig {
         applicationId = "dev.helw.playground.sdui.android"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
     }
 
     buildFeatures.compose = true
-    composeOptions.kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
 
     packaging {
         resources {
@@ -169,6 +159,4 @@ compose {
             macOS.bundleID = "dev.helw.playground.sdui"
         }
     }
-
-    experimental.web.application {}
 }
