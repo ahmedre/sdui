@@ -1,17 +1,13 @@
 /**
- * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
+ * Copyright (c) 2024 Ahmed El-Helw and Abdulahi Osoble
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-/**
- * Copyright (c) 2023 Ahmed El-Helw and Abdulahi Osoble
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
@@ -19,7 +15,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-@OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
     applyDefaultHierarchyTemplate()
 
@@ -30,10 +26,8 @@ kotlin {
     wasmJs { browser() }
 
     androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_1_8)
         }
     }
 
@@ -84,8 +78,7 @@ kotlin {
         val wasmJsMain by getting {
             dependsOn(webMain)
             dependencies {
-                val wasmKtor = "3.0.0-wasm1"
-                implementation("io.ktor:ktor-client-core:$wasmKtor")
+                implementation(libs.ktor.client.core)
             }
         }
     }
@@ -93,7 +86,7 @@ kotlin {
 
 android {
     namespace = "dev.helw.playground.sdui.design"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig.minSdk = 21
     sourceSets {
         named("main") {
